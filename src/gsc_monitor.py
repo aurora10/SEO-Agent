@@ -46,12 +46,20 @@ def parse_flagships(repo: str):
 
 
 def priority_urls(repo: str) -> list[str]:
-    """The pages we care most about: werkgevers + base trade pages (nl+fr)."""
-    trades, _ = parse_flagships(repo)
+    """The pages we care most about:
+    - werkgevers (commercial flagship)
+    - base trade pages: /diensten/onderaannemer-{trade} (nl + fr)
+    - city trade+city pages: /diensten/onderaannemer-{trade}-{city} (nl + fr) — the
+      pages that actually rank for city+trade queries.
+    """
+    trades, cities = parse_flagships(repo)
     urls = [f"{BASE}/nl/werkgevers"]
     for lang in ("nl", "fr"):
         for t in sorted(trades):
             urls.append(f"{BASE}/{lang}/diensten/onderaannemer-{t}")
+        for c in sorted(cities):
+            for t in sorted(trades):
+                urls.append(f"{BASE}/{lang}/diensten/onderaannemer-{t}-{c}")
     return urls
 
 
