@@ -1,0 +1,150 @@
+"""Publisher: commit approved drafts to a branch and open a GitHub PR.
+
+This is the *only* write action in the system. It runs only if the user
+explicitly calls it -- publish is a deliberate gesture, never automatic.
+
+Usage:
+    python src/publish_drafts.py --config config.yaml --repo /path/to/constructief
+
+Config additions (config.yaml):
+  github:
+    token: "github_pat_..."        # fine-grained PAT, Contents+PR on this repo only
+    repo: "aurora10/constructief"
+    base_branch: "google-sheets"   # what Vercel deploys
+  notify: (same as in generate_content)
+"""
+import argparse
+import base64
+import datetime as dt
+import json
+import os
+
+import requests
+import yaml
+
+
+G = "https://api.github.com"
+
+
+def gh_headers(token):
+    return {"Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28"}
+
+
+def get_file_sha(token, repo, path, branch):
+    r = requests.get(f"{G}/repos/{repo}/contents/{path}?ref={branch}",
+                     headers=gh_headers(token))
+    if r.status_code == 404:
+        return None
+    r.raise_for_status()
+    return r.json()["sha"]
+
+
+def put_file(token, repo, path, branch, content, sha, message):
+    payload = {
+        "message": message,
+        "content": base64.b64encode(json.dumps(content, ensure_ascii=False,
+                                               indent=2).encode()).decode(),
+        "branch": branch,
+    }
+    if sha:
+        payload["sha"] = sha
+    r = requests.put(f"{G}/repos/{repo}/contents/{path}",
+                     headers=gh_headers(token), json=payload)
+    r.raise_for_status()
+
+
+def merge_into_nl_json(token, repo, branch, fragments: dict):
+    """Merge draft fragments into src/messages/nl.json (nested dict merge)."""
+    path = "src/messages/nl.json"
+    r = requests.get(f"{G}/repos/{repo}/contents/{path}?ref={branch}",
+                     headers=gh_headers(token))
+    r.raise_for_status()
+    live = json.loads(base64.b64decode(r.json()["content"]).decode())
+    sha = r.json()["sha"]
+
+    for top_key, patch in fragments.items():
+        if isinstance(patch, dict):
+            live.setdefault(top_key, {}).update(patch)
+        else:
+            live[top_key] = patch
+    return live, sha
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--config", default="config.yaml")
+    ap.add_argument("--repo", required=True, help="local clone (used for drafts/)")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="validate draft JSON, show what WOULD be pushed")
+    args = ap.parse_args()
+
+    cfg = yaml.safe_load(open(args.config))
+    gh = cfg["github"]
+    token, repo, base = gh["token"], gh["repo"], gh["base_branch"]
+
+    # collect all draft fragments
+    drafts_dir = os.path.join(args.repo, "..", "seo-agent", "drafts")
+    if not os.path.isdir(drafts_dir):
+        drafts_dir = "drafts"
+    drafts = {}
+    if not os.path.isdir(drafts_dir):
+        print("No drafts to publish. Run generate_content.py first.")
+        return
+    for fn in sorted(os.listdir(drafts_dir)):
+        if fn.endswith(".json") and not fn.startswith("report"):
+            with open(os.path.join(drafts_dir, fn)) as f:
+                frag = json.load(f)
+            drafts[fn] = frag
+
+    if not drafts:
+        print("No drafts to publish. Run generate_content.py first.")
+        return
+
+    print(f"Drafts to publish: {list(drafts.keys())}")
+    print(f"Target: {repo} branch={base}")
+
+    dated = dt.date.today().isoformat()
+    branch = f"seo/{dated}"
+
+    if args.dry_run:
+        print("\nDRY RUN — would push:")
+        for fn, frag in drafts.items():
+            print(f"  {fn}: keys {list(frag.keys())}")
+        print(f"\nNew branch: {branch}")
+        print("PR title: SEO: content drafts (Agent 3)")
+        print("\n(run without --dry-run to actually create branch + open PR)")
+        return
+
+    # 1. new branch from base
+    r = requests.get(f"{G}/repos/{repo}/git/refs/heads/{base}",
+                     headers=gh_headers(token)); r.raise_for_status()
+    base_sha = r.json()["object"]["sha"]
+    requests.post(f"{G}/repos/{repo}/git/refs",
+                  headers=gh_headers(token),
+                  json={"ref": f"refs/heads/{branch}", "sha": base_sha}).raise_for_status()
+
+    # 2. merge fragments into live nl.json on the new branch
+    fragments = {}
+    for frag in drafts.values():
+        fragments.update(frag)
+    merged, _ = merge_into_nl_json(token, repo, branch, fragments)
+    put_file(token, repo, "src/messages/nl.json", branch,
+             merged, get_file_sha(token, repo, "src/messages/nl.json", branch),
+             f"SEO: content drafts ({len(drafts)})")
+
+    # 3. open PR
+    pr = requests.post(f"{G}/repos/{repo}/pulls",
+                       headers=gh_headers(token),
+                       json={"title": f"SEO: content drafts {dated}",
+                             "head": branch, "base": base,
+                             "body": "Drafts generated by seo-agent Agent 3. "
+                                     "Review `src/messages/nl.json` diff, "
+                                     "merge to deploy."}).json()
+    print(f"\nPR opened: {pr['html_url']}")
+    print("Merge it on GitHub to deploy.")
+
+
+if __name__ == "__main__":
+    main()

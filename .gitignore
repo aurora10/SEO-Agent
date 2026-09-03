@@ -1,0 +1,18 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+
+# --- Secrets (NEVER commit these) ---
+# config.yaml holds your DataForSEO login/password + live site values.
+config.yaml
+credentials/
+
+# --- Local data / generated artifacts ---
+data/*.db
+reports/
+drafts/
+
+# --- macOS ---
+.DS_Store

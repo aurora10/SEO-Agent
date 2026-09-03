@@ -1,0 +1,2208 @@
+{
+  "generated": "2026-09-03",
+  "clusters": {
+    "core": {
+      "volume": 80,
+      "keywords": 15,
+      "not_ranking": 14,
+      "striking": 0
+    },
+    "trade:beton": {
+      "volume": 0,
+      "keywords": 5,
+      "not_ranking": 5,
+      "striking": 0
+    },
+    "trade:gevel": {
+      "volume": 0,
+      "keywords": 5,
+      "not_ranking": 5,
+      "striking": 0
+    },
+    "trade:dak": {
+      "volume": 20,
+      "keywords": 5,
+      "not_ranking": 5,
+      "striking": 0
+    },
+    "trade:interieur": {
+      "volume": 0,
+      "keywords": 8,
+      "not_ranking": 8,
+      "striking": 0
+    },
+    "trade:ruwbouw": {
+      "volume": 20,
+      "keywords": 7,
+      "not_ranking": 7,
+      "striking": 0
+    },
+    "city:antwerpen": {
+      "volume": 0,
+      "keywords": 1,
+      "not_ranking": 0,
+      "striking": 1
+    },
+    "city:brussel": {
+      "volume": 0,
+      "keywords": 1,
+      "not_ranking": 0,
+      "striking": 0
+    },
+    "city:gent": {
+      "volume": 0,
+      "keywords": 1,
+      "not_ranking": 0,
+      "striking": 1
+    },
+    "city:leuven": {
+      "volume": 0,
+      "keywords": 1,
+      "not_ranking": 0,
+      "striking": 0
+    },
+    "city:luik": {
+      "volume": 0,
+      "keywords": 1,
+      "not_ranking": 0,
+      "striking": 0
+    },
+    "city:amsterdam": {
+      "volume": 0,
+      "keywords": 2,
+      "not_ranking": 2,
+      "striking": 0
+    },
+    "city:rotterdam": {
+      "volume": 0,
+      "keywords": 2,
+      "not_ranking": 2,
+      "striking": 0
+    },
+    "city:antwerpen:beton": {
+      "volume": 0,
+      "keywords": 1,
+      "not_ranking": 1,
+      "striking": 0
+    },
+    "city:antwerpen:interieur": {
+      "volume": 0,
+      "keywords": 1,
+      "not_ranking": 1,
+      "striking": 0
+    },
+    "city:brussel:beton": {
+      "volume": 0,
+      "keywords": 1,
+      "not_ranking": 0,
+      "striking": 0
+    },
+    "city:brussel:interieur": {
+      "volume": 0,
+      "keywords": 1,
+      "not_ranking": 1,
+      "striking": 0
+    },
+    "city:gent:beton": {
+      "volume": 0,
+      "keywords": 1,
+      "not_ranking": 1,
+      "striking": 0
+    },
+    "city:gent:interieur": {
+      "volume": 0,
+      "keywords": 1,
+      "not_ranking": 1,
+      "striking": 0
+    },
+    "city:leuven:beton": {
+      "volume": 0,
+      "keywords": 1,
+      "not_ranking": 0,
+      "striking": 0
+    },
+    "city:leuven:interieur": {
+      "volume": 0,
+      "keywords": 1,
+      "not_ranking": 1,
+      "striking": 0
+    },
+    "city:luik:beton": {
+      "volume": 0,
+      "keywords": 1,
+      "not_ranking": 0,
+      "striking": 0
+    },
+    "city:luik:interieur": {
+      "volume": 0,
+      "keywords": 1,
+      "not_ranking": 1,
+      "striking": 0
+    },
+    "trade:renovatie": {
+      "volume": 400,
+      "keywords": 5,
+      "not_ranking": 5,
+      "striking": 0
+    }
+  },
+  "keywords": [
+    {
+      "keyword": "onderaannemer bouw",
+      "cluster": "core",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 40,
+      "competition": "MEDIUM",
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/werkgevers",
+      "top_competitors": [
+        {
+          "domain": "www.vdab.be",
+          "title": "429 jobs voor onderaannemer gevonden",
+          "rank": 1
+        },
+        {
+          "domain": "be.indeed.com",
+          "title": "Onderaannemer bouw vacatures",
+          "rank": 2
+        },
+        {
+          "domain": "www.onderaannemers.be",
+          "title": "ONDERAANNEMERS.BE | Platform voor Onderaannemers ...",
+          "rank": 5
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "onderaannemer bouw beschikbaar",
+      "cluster": "core",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/werkgevers",
+      "top_competitors": [
+        {
+          "domain": "www.vdab.be",
+          "title": "429 jobs voor onderaannemer gevonden",
+          "rank": 2
+        },
+        {
+          "domain": "www.onderaannemers.be",
+          "title": "ONDERAANNEMERS.BE | Platform voor Onderaannemers ...",
+          "rank": 4
+        },
+        {
+          "domain": "be.indeed.com",
+          "title": "Onderaannemer bouw vacatures",
+          "rank": 5
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "bouwploeg huren",
+      "cluster": "core",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/werkgevers",
+      "top_competitors": [
+        {
+          "domain": "www.huurland.be",
+          "title": "Bouwdroger huren bij Huurland.",
+          "rank": 2
+        },
+        {
+          "domain": "www.wimverhuur.be",
+          "title": "Bouwdroger 220V huren? Snel en makkelijk via ...",
+          "rank": 3
+        },
+        {
+          "domain": "www.bouwdroger-verhuur.be",
+          "title": "Bouwdroger-verhuur.be: Bouwdroger huren in heel België",
+          "rank": 4
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "bouwploeg inhuren",
+      "cluster": "core",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/werkgevers",
+      "top_competitors": [
+        {
+          "domain": "www.lrgroep.nl",
+          "title": "Bouwploeg Inhuren Kosten 2025 — Tarieven & Tips",
+          "rank": 2
+        },
+        {
+          "domain": "bouwsteenwinkel.nl",
+          "title": "Bouwploeg huren | LEGO Technic #42023",
+          "rank": 3
+        },
+        {
+          "domain": "bowers.nl",
+          "title": "Bouwpersoneel inhuren? Dat doe je via Bowers!",
+          "rank": 4
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "buitenlandse bouwvakkers inhuren",
+      "cluster": "core",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/werkgevers",
+      "top_competitors": [
+        {
+          "domain": "europesearbeiders.be",
+          "title": "Europese Arbeiders - Buitenlandse arbeiders - 15j Erv ...",
+          "rank": 2
+        },
+        {
+          "domain": "www.ondernemenmetpersoneel.nl",
+          "title": "Werken met buitenlanders in de bouw",
+          "rank": 3
+        },
+        {
+          "domain": "europeseonderaannemingbfy.be",
+          "title": "ONDERAANNEMING - Poolse en Slowaakse vakmannen",
+          "rank": 4
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "poolse arbeiders bouw",
+      "cluster": "core",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 10,
+      "competition": "MEDIUM",
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/werkgevers",
+      "top_competitors": [
+        {
+          "domain": "buitenlandsewerknemers.be",
+          "title": "arbeiders - 15j Ervaring - Bouw Buitenlandse werknemers",
+          "rank": 1
+        },
+        {
+          "domain": "europesearbeiders.be",
+          "title": "Buitenlandse werknemers in de bouw",
+          "rank": 2
+        },
+        {
+          "domain": "pbibouw.nl",
+          "title": "Poolse Arbeiders Inhuren",
+          "rank": 3
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "oost-europese vakmensen bouw",
+      "cluster": "core",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/werkgevers",
+      "top_competitors": [
+        {
+          "domain": "fflexx.lovable.app",
+          "title": "Bouw Personeel uit Oost-Europa",
+          "rank": 2
+        },
+        {
+          "domain": "www.europages.nl",
+          "title": "Gewapende Betonnen Bouwers uit Oost-Europa",
+          "rank": 3
+        },
+        {
+          "domain": "europesearbeiders.be",
+          "title": "Voordelen van werknemers uit Oost-Europa",
+          "rank": 4
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "detachering bouwpersoneel",
+      "cluster": "core",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 10,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {
+        "gsc_pos": 93.7,
+        "gsc_imp": 15.0
+      },
+      "target_page": "https://constructief-bouw.be/nl/werkgevers",
+      "top_competitors": [
+        {
+          "domain": "bouwkroniek.be",
+          "title": "Detachering blijft noodzakelijk om tekort aan ...",
+          "rank": 2
+        },
+        {
+          "domain": "www.tijd.be",
+          "title": "Detachering in bouwsector betekent aanzienlijk lek voor ...",
+          "rank": 4
+        },
+        {
+          "domain": "www.randstad.nl",
+          "title": "Werving, selectie, detachering bouwpersoneel",
+          "rank": 5
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "vakmensen bouw inhuren",
+      "cluster": "core",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/werkgevers",
+      "top_competitors": [
+        {
+          "domain": "ned-personeel.nl",
+          "title": "Huur bouwvakkers in",
+          "rank": 2
+        },
+        {
+          "domain": "prestatie.eu",
+          "title": "Snel flexibel bouwpersoneel en ZZP-vakmensen",
+          "rank": 4
+        },
+        {
+          "domain": "www.ondernemenmetpersoneel.nl",
+          "title": "Werken met buitenlanders in de bouw",
+          "rank": 5
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "betrouwbare onderaannemer bouw",
+      "cluster": "core",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": 30,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/werkgevers",
+      "top_competitors": [
+        {
+          "domain": "be.indeed.com",
+          "title": "Onderaannemer bouw vacatures",
+          "rank": 1
+        },
+        {
+          "domain": "www.buildwise.be",
+          "title": "Werken via onderaanneming in de bouw: zó pak je dat aan",
+          "rank": 3
+        },
+        {
+          "domain": "www.facebook.com",
+          "title": "Aannemers / Onderaannemers Gezocht - BE & NL",
+          "rank": 5
+        }
+      ],
+      "status": "deep"
+    },
+    {
+      "keyword": "sous-traitant construction",
+      "cluster": "core",
+      "lang": "fr",
+      "city": null,
+      "location": "BE",
+      "volume": 10,
+      "competition": "MEDIUM",
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/werkgevers",
+      "top_competitors": [
+        {
+          "domain": "emplois.be.indeed.com",
+          "title": "emplois Sous traitant construction",
+          "rank": 2
+        },
+        {
+          "domain": "www.artibox-belgique.be",
+          "title": "Comment trouver des chantiers en sous-traitance en ...",
+          "rank": 3
+        },
+        {
+          "domain": "www.buildwise.be",
+          "title": "Des travaux en sous-traitance dans la construction ? Voici ...",
+          "rank": 4
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "sous-traitance bâtiment",
+      "cluster": "core",
+      "lang": "fr",
+      "city": null,
+      "location": "BE",
+      "volume": 10,
+      "competition": "HIGH",
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/werkgevers",
+      "top_competitors": [
+        {
+          "domain": "emplois.be.indeed.com",
+          "title": "emplois Sous traitant construction",
+          "rank": 2
+        },
+        {
+          "domain": "www.artibox-belgique.be",
+          "title": "Comment trouver des chantiers en sous-traitance en ...",
+          "rank": 3
+        },
+        {
+          "domain": "www.securex.be",
+          "title": "Sous-traitance dans le bâtiment : comment établir un contrat",
+          "rank": 4
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "équipe construction",
+      "cluster": "core",
+      "lang": "fr",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/werkgevers",
+      "top_competitors": [
+        {
+          "domain": "emplois.be.indeed.com",
+          "title": "emplois Chef d'équipe construction",
+          "rank": 2
+        },
+        {
+          "domain": "www.startpeople.be",
+          "title": "Offres d'emploi pour \"chef d equipe construction\" - Start People",
+          "rank": 5
+        },
+        {
+          "domain": "www.ccl.be",
+          "title": "Chef d'équipe - Embuild - Chambre de la Construction",
+          "rank": 6
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "main-d'œuvre construction",
+      "cluster": "core",
+      "lang": "fr",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/werkgevers",
+      "top_competitors": [
+        {
+          "domain": "www.vertuoza.com",
+          "title": "Quel est le coût de la main-d'œuvre dans le bâtiment ?",
+          "rank": 2
+        },
+        {
+          "domain": "traxxeo.com",
+          "title": "Comment calculer au mieux le coût de la main d'œuvre sur ...",
+          "rank": 4
+        },
+        {
+          "domain": "linfo-csc.be",
+          "title": "Pénurie de main-d'œuvre dans le secteur - L'Info CSC |",
+          "rank": 5
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "ouvriers construction étrangers",
+      "cluster": "core",
+      "lang": "fr",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/werkgevers",
+      "top_competitors": [
+        {
+          "domain": "constructiv.be",
+          "title": "FAQ-Travailleurs étranger",
+          "rank": 2
+        },
+        {
+          "domain": "www.siod.belgie.be",
+          "title": "Information pour les travailleurs étrangers de la construction ...",
+          "rank": 3
+        },
+        {
+          "domain": "www.sdworx.be",
+          "title": "Profils étrangers : pour une PME sur trois, la nationalité n'a ...",
+          "rank": 4
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "onderaannemer betonwerken",
+      "cluster": "trade:beton",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-betonwerken",
+      "top_competitors": [
+        {
+          "domain": "betonwerken-lombaert.be",
+          "title": "Betonwerken Lombaert",
+          "rank": 1
+        },
+        {
+          "domain": "www.gyselinck.be",
+          "title": "Betonwerken Oost- en West-Vlaanderen",
+          "rank": 2
+        },
+        {
+          "domain": "in2beton.be",
+          "title": "Betonwerken in onderaanneming",
+          "rank": 3
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "betonarbeiders ploeg",
+      "cluster": "trade:beton",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-betonwerken",
+      "top_competitors": [
+        {
+          "domain": "www.vdab.be",
+          "title": "340 jobs voor betonarbeider gevonden",
+          "rank": 1
+        },
+        {
+          "domain": "www.asap.be",
+          "title": "Betonarbeiders - Asap",
+          "rank": 4
+        },
+        {
+          "domain": "emplois.be.indeed.com",
+          "title": "Betonarbeider : plus de 25 emplois (20 août 2026)",
+          "rank": 5
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "betonploeg",
+      "cluster": "trade:beton",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-betonwerken",
+      "top_competitors": [
+        {
+          "domain": "www.aoetechniek.nl",
+          "title": "Betonploeg",
+          "rank": 2
+        },
+        {
+          "domain": "www.jobat.be",
+          "title": "Vacature Medewerker betonploeg in West-Vlaanderen",
+          "rank": 3
+        },
+        {
+          "domain": "www.stepstone.be",
+          "title": "MEDEWERKER BETONPLOEG - Job dans la société ...",
+          "rank": 4
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "onderaannemer gevelwerk",
+      "cluster": "trade:gevel",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-gevelwerk",
+      "top_competitors": [
+        {
+          "domain": "www.eurogevel.be",
+          "title": "Jobs Bij Euro Gevel: Onderaannemer Gevelisolatie En Crepi",
+          "rank": 1
+        },
+        {
+          "domain": "www.homedeal.be",
+          "title": "Wat kosten gevelwerken? - 2026 prijzenoverzicht - Homedeal",
+          "rank": 2
+        },
+        {
+          "domain": "www.vdab.be",
+          "title": "429 jobs voor onderaannemer gevonden",
+          "rank": 3
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "gevelrenovatie onderaannemer",
+      "cluster": "trade:gevel",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-gevelwerk",
+      "top_competitors": [
+        {
+          "domain": "www.vancalster-vloeren.be",
+          "title": "Onderaannemer renovatie badkamer",
+          "rank": 1
+        },
+        {
+          "domain": "www.gevelmeesters.be",
+          "title": "Aannemer gevelrenovatie",
+          "rank": 3
+        },
+        {
+          "domain": "www.eurogevel.be",
+          "title": "Jobs Bij Euro Gevel: Onderaannemer Gevelisolatie En Crepi",
+          "rank": 4
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "gevelisolatie ploeg",
+      "cluster": "trade:gevel",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-gevelwerk",
+      "top_competitors": [
+        {
+          "domain": "www.isolatiemateriaal.be",
+          "title": "Gevelisolatie | Gemakkelijk & snel! | De Isolatieshop",
+          "rank": 1
+        },
+        {
+          "domain": "www.cleys.be",
+          "title": "Gevelisolatie: verfraai én bespaar tegelijk",
+          "rank": 2
+        },
+        {
+          "domain": "www.buitenmuurisoleren.be",
+          "title": "Gevelisolatie: gevel langs buiten isoleren: prijs, tips & advies",
+          "rank": 3
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "onderaannemer dakwerken",
+      "cluster": "trade:dak",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 10,
+      "competition": "HIGH",
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-dakwerken",
+      "top_competitors": [
+        {
+          "domain": "be.jooble.org",
+          "title": "Onderaannemers dakwerken (Dringend!) - Vacatures",
+          "rank": 1
+        },
+        {
+          "domain": "be.indeed.com",
+          "title": "Onderaannemer dakwerken vacatures",
+          "rank": 4
+        },
+        {
+          "domain": "antwerpsedakwerken.be",
+          "title": "Zelfstandige onderaannemers",
+          "rank": 5
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "dakwerkers ploeg",
+      "cluster": "trade:dak",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-dakwerken",
+      "top_competitors": [
+        {
+          "domain": "www.energyprotect.be",
+          "title": "Dakwerker gezocht | Werk als onderaannemer bij ...",
+          "rank": 2
+        },
+        {
+          "domain": "www.facebook.com",
+          "title": "Betrouwbare dakwerker gezocht",
+          "rank": 4
+        },
+        {
+          "domain": "www.asap.be",
+          "title": "Ploegbaas dakwerken - Asap",
+          "rank": 5
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "dakdekker onderaannemer",
+      "cluster": "trade:dak",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-dakwerken",
+      "top_competitors": [
+        {
+          "domain": "www.kamildak.nl",
+          "title": "Onderaannemer - KAMILDAK B.V. | Specialist in ...",
+          "rank": 1
+        },
+        {
+          "domain": "be.indeed.com",
+          "title": "Onderaannemer dakwerken vacatures",
+          "rank": 2
+        },
+        {
+          "domain": "www.facebook.com",
+          "title": "Betrouwbare dakwerker gezocht",
+          "rank": 3
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "stukadoor ploeg",
+      "cluster": "trade:interieur",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "top_competitors": [
+        {
+          "domain": "schoeffaerts.be",
+          "title": "Stukadoor(s) / Ploeg",
+          "rank": 2
+        },
+        {
+          "domain": "www.facebook.com",
+          "title": "Stukadoor Bedrijf R.Ploeg (@reneploegstukadoor)",
+          "rank": 3
+        },
+        {
+          "domain": "emplois.be.indeed.com",
+          "title": "Stukadoor(s) / Ploeg - 3590 Diepenbeek",
+          "rank": 5
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "stukadoors inhuren",
+      "cluster": "trade:interieur",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "top_competitors": [
+        {
+          "domain": "stukadoorinhuren.nl",
+          "title": "Stukadoor Inhuren vanaf €14,99 per m2 (Actie)",
+          "rank": 1
+        },
+        {
+          "domain": "www.homedeal.be",
+          "title": "Stukadoor - 2026 Complete gids - Homedeal",
+          "rank": 3
+        },
+        {
+          "domain": "www.stuc-concurrent.nl",
+          "title": "Stukadoor collectief inhuren? Goedkoper dan u denkt!",
+          "rank": 4
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "tegelzetter ploeg",
+      "cluster": "trade:interieur",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "top_competitors": [
+        {
+          "domain": "nl.linkedin.com",
+          "title": "Jan Ploeg - Directeur/tegelzetter",
+          "rank": 2
+        },
+        {
+          "domain": "www.homedeal.be",
+          "title": "Tegelzetters - 2026 prijzenoverzicht - Homedeal",
+          "rank": 4
+        },
+        {
+          "domain": "nl.wikipedia.org",
+          "title": "Tegelzetter",
+          "rank": 5
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "onderaannemer binnenafwerking",
+      "cluster": "trade:interieur",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "top_competitors": [
+        {
+          "domain": "www.vdab.be",
+          "title": "144 jobs voor zelfstandig onderaannemer gevonden",
+          "rank": 2
+        },
+        {
+          "domain": "www.facebook.com",
+          "title": "Aannemers / Onderaannemers Gezocht - BE & NL",
+          "rank": 3
+        },
+        {
+          "domain": "www.bouwinfo.be",
+          "title": "Werken met onderaannemers",
+          "rank": 5
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "afwerkingsploeg bouw",
+      "cluster": "trade:interieur",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "top_competitors": [
+        {
+          "domain": "eploegbouw.nl",
+          "title": "Home - E. Ploeg - Bouw & Afbouw - Software - App",
+          "rank": 2
+        },
+        {
+          "domain": "www.ploegbouwservice.nl",
+          "title": "Ploeg Bouw – Een bouwer met service",
+          "rank": 3
+        },
+        {
+          "domain": "www.facebook.com",
+          "title": "Ploeg bouw en afbouw is uw partner in de bouw. Wij verrichten ...",
+          "rank": 4
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "onderaannemer ruwbouw",
+      "cluster": "trade:ruwbouw",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 10,
+      "competition": "LOW",
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-ruwbouw",
+      "top_competitors": [
+        {
+          "domain": "be.indeed.com",
+          "title": "Onderaannemer zoekt werk bouw vacatures",
+          "rank": 1
+        },
+        {
+          "domain": "group-kms.com",
+          "title": "Totaalprojecten | KMS Group Deinze Ruwbouw Specialist",
+          "rank": 4
+        },
+        {
+          "domain": "be.jooble.org",
+          "title": "Vacatures - Onderaannemer ruwbouw (Dringend!)",
+          "rank": 5
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "metselaars ploeg",
+      "cluster": "trade:ruwbouw",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-ruwbouw",
+      "top_competitors": [
+        {
+          "domain": "himpe.be",
+          "title": "Ploeg Metselaars",
+          "rank": 2
+        },
+        {
+          "domain": "www.ago.jobs",
+          "title": "Metselaars ploeg in Loppem",
+          "rank": 4
+        },
+        {
+          "domain": "nl.wikipedia.org",
+          "title": "Vrijmetselarij",
+          "rank": 5
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "metselaars inhuren",
+      "cluster": "trade:ruwbouw",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-ruwbouw",
+      "top_competitors": [
+        {
+          "domain": "jjmpersoneel.nl",
+          "title": "Metselaars gezocht?",
+          "rank": 1
+        },
+        {
+          "domain": "www.casius.be",
+          "title": "Metselwerken gepland? Gratis drie offertes - Casius",
+          "rank": 3
+        },
+        {
+          "domain": "www.werkspot.nl",
+          "title": "Vind een metselaar bij jou in de buurt",
+          "rank": 6
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "sous-traitant béton",
+      "cluster": "trade:beton",
+      "lang": "fr",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-betonwerken",
+      "top_competitors": [
+        {
+          "domain": "wannijn.be",
+          "title": "Infra",
+          "rank": 2
+        },
+        {
+          "domain": "www.artibox-belgique.be",
+          "title": "Comment trouver des chantiers en sous-traitance en ...",
+          "rank": 3
+        },
+        {
+          "domain": "www.ergon.be",
+          "title": "Une réputation en béton",
+          "rank": 4
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "équipe béton",
+      "cluster": "trade:beton",
+      "lang": "fr",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-betonwerken",
+      "top_competitors": [
+        {
+          "domain": "www.sobemo.be",
+          "title": "Notre équipe d'experts du béton à votre service - Sobemo",
+          "rank": 2
+        },
+        {
+          "domain": "www.actiris.brussels",
+          "title": "chef d'equipe beton H/F/X - Ref. 5919810",
+          "rank": 3
+        },
+        {
+          "domain": "www.tempo-team.be",
+          "title": "Offre d'emploi chef d'équipe beton à Saint-Ghislain, Hainaut",
+          "rank": 4
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "sous-traitant façade",
+      "cluster": "trade:gevel",
+      "lang": "fr",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-gevelwerk",
+      "top_competitors": [
+        {
+          "domain": "www.btpfusion.com",
+          "title": "Sous-traitant Façade - Façadier",
+          "rank": 2
+        },
+        {
+          "domain": "www.facebook.com",
+          "title": "Recherche sous traitant sur Bruxelles toiture et façade",
+          "rank": 4
+        },
+        {
+          "domain": "www.arti-box.fr",
+          "title": "Trouver des chantiers de façade",
+          "rank": 5
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "rénovation façade sous-traitant",
+      "cluster": "trade:gevel",
+      "lang": "fr",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-gevelwerk",
+      "top_competitors": [
+        {
+          "domain": "www.euronet-vanbelle.be",
+          "title": "Rénovation de façade à Bruxelles - Euronet",
+          "rank": 2
+        },
+        {
+          "domain": "www.facebook.com",
+          "title": "Recherche sous traitant sur Bruxelles toiture et façade",
+          "rank": 3
+        },
+        {
+          "domain": "fr.indeed.com",
+          "title": "Sous Traitance Facade : plus de 100 emplois (13 août 2026)",
+          "rank": 4
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "sous-traitant toiture",
+      "cluster": "trade:dak",
+      "lang": "fr",
+      "city": null,
+      "location": "BE",
+      "volume": 10,
+      "competition": "HIGH",
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-dakwerken",
+      "top_competitors": [
+        {
+          "domain": "www.facebook.com",
+          "title": "🔨 Collaboration sous-traitance – Toiture Entreprise de ...",
+          "rank": 1
+        },
+        {
+          "domain": "www.energyprotect.be",
+          "title": "Couvreur indépendant toiture Wallonie",
+          "rank": 3
+        },
+        {
+          "domain": "www.artibox-belgique.be",
+          "title": "Travaux de toiture | ArtiBox",
+          "rank": 7
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "couvreurs équipe",
+      "cluster": "trade:dak",
+      "lang": "fr",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-dakwerken",
+      "top_competitors": [
+        {
+          "domain": "www.jobteaser.com",
+          "title": "Chef d'équipe de couvreurs",
+          "rank": 1
+        },
+        {
+          "domain": "www.facebook.com",
+          "title": "Couvreurs de Belgique",
+          "rank": 5
+        },
+        {
+          "domain": "www.trustup.be",
+          "title": "Top 10 des meilleurs couvreurs en Belgique",
+          "rank": 6
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "sous-traitant plâtrerie",
+      "cluster": "trade:interieur",
+      "lang": "fr",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-afwerking",
+      "top_competitors": [
+        {
+          "domain": "fr.indeed.com",
+          "title": "emplois Sous traitant plaquiste",
+          "rank": 2
+        },
+        {
+          "domain": "www.artibox-belgique.be",
+          "title": "Comment trouver des chantiers en sous-traitance en ...",
+          "rank": 4
+        },
+        {
+          "domain": "cotraitance.com",
+          "title": "recherches des sous-traitants PLATRERIE + ISOLATION + ...",
+          "rank": 5
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "carreleurs équipe",
+      "cluster": "trade:interieur",
+      "lang": "fr",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-afwerking",
+      "top_competitors": [
+        {
+          "domain": "expert-carreleur.be",
+          "title": "EXPERT CARRELEUR",
+          "rank": 1
+        },
+        {
+          "domain": "www.trustup.be",
+          "title": "Top 10 des meilleurs carreleurs à La Louvière",
+          "rank": 2
+        },
+        {
+          "domain": "be.jooble.org",
+          "title": "Emploi - Carreleur (D'urgence!)",
+          "rank": 3
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "onderaannemer bouw antwerpen",
+      "cluster": "city:antwerpen",
+      "lang": "nl",
+      "city": "antwerpen",
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": 15,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-antwerpen",
+      "top_competitors": [
+        {
+          "domain": "be.indeed.com",
+          "title": "Onderaannemer bouw vacatures",
+          "rank": 2
+        },
+        {
+          "domain": "be.jooble.org",
+          "title": "Zelfstandig onderaannemers bouw (Dringend!) - Vacatures",
+          "rank": 3
+        },
+        {
+          "domain": "www.vdab.be",
+          "title": "114 jobs voor Onderaannemer gevonden in Antwerpen ...",
+          "rank": 4
+        }
+      ],
+      "status": "striking_distance"
+    },
+    {
+      "keyword": "onderaannemer bouw brussel",
+      "cluster": "city:brussel",
+      "lang": "fr",
+      "city": "brussel",
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": 27,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-brussel",
+      "top_competitors": [
+        {
+          "domain": "be.indeed.com",
+          "title": "Onderaannemer bouw vacatures",
+          "rank": 2
+        },
+        {
+          "domain": "embuild.be",
+          "title": "Embuild | Embuild",
+          "rank": 3
+        },
+        {
+          "domain": "www.vdab.be",
+          "title": "429 jobs voor onderaannemer gevonden",
+          "rank": 4
+        }
+      ],
+      "status": "deep"
+    },
+    {
+      "keyword": "onderaannemer bouw gent",
+      "cluster": "city:gent",
+      "lang": "nl",
+      "city": "gent",
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": 11,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-gent",
+      "top_competitors": [
+        {
+          "domain": "www.vdab.be",
+          "title": "14 jobs voor Onderaannemer gevonden in Gent (9000)",
+          "rank": 1
+        },
+        {
+          "domain": "be.indeed.com",
+          "title": "Onderaannemer bouw vacatures",
+          "rank": 2
+        },
+        {
+          "domain": "technicians.be",
+          "title": "Onderaannemer gezocht in Gent?",
+          "rank": 6
+        }
+      ],
+      "status": "striking_distance"
+    },
+    {
+      "keyword": "onderaannemer bouw leuven",
+      "cluster": "city:leuven",
+      "lang": "nl",
+      "city": "leuven",
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": 10,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-leuven",
+      "top_competitors": [
+        {
+          "domain": "www.van-der-steen.be",
+          "title": "Van der Steen – Algemene bouwonderneming",
+          "rank": 1
+        },
+        {
+          "domain": "trustlocal.be",
+          "title": "Top 10 Aannemers in Leuven | Prijzen & Reviews - Trustlocal",
+          "rank": 5
+        },
+        {
+          "domain": "be.indeed.com",
+          "title": "Onderaannemer bouw vacatures",
+          "rank": 6
+        }
+      ],
+      "status": "page1"
+    },
+    {
+      "keyword": "onderaannemer bouw luik",
+      "cluster": "city:luik",
+      "lang": "fr",
+      "city": "luik",
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": 3,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-luik",
+      "top_competitors": [
+        {
+          "domain": "aannemernodig.be",
+          "title": "Bouwprojecten Luik Wallonië | LeoLor Group Onderaannemer",
+          "rank": 2
+        },
+        {
+          "domain": "be.indeed.com",
+          "title": "Onderaannemer bouw vacatures",
+          "rank": 4
+        },
+        {
+          "domain": "www.buildwise.be",
+          "title": "Werken via onderaanneming in de bouw: zó pak je dat aan",
+          "rank": 5
+        }
+      ],
+      "status": "top3"
+    },
+    {
+      "keyword": "onderaannemer bouw amsterdam",
+      "cluster": "city:amsterdam",
+      "lang": "nl",
+      "city": "amsterdam",
+      "location": "NL",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-amsterdam",
+      "top_competitors": [
+        {
+          "domain": "www.dewaardbouw.nl",
+          "title": "De Waard Bouw: Aannemer in Amsterdam",
+          "rank": 5
+        },
+        {
+          "domain": "www.bouwjobs.nl",
+          "title": "Vacatures bouw Amsterdam",
+          "rank": 6
+        },
+        {
+          "domain": "betsemabouwgroep.nl",
+          "title": "Betsema Bouwgroep | Specialist & Onderaanneming",
+          "rank": 7
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "bouwploeg huren amsterdam",
+      "cluster": "city:amsterdam",
+      "lang": "nl",
+      "city": "amsterdam",
+      "location": "NL",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-amsterdam",
+      "top_competitors": [
+        {
+          "domain": "www.amsterdam.nl",
+          "title": "Wonen, bouwen en verbouwen",
+          "rank": 2
+        },
+        {
+          "domain": "vloeropstoken.nl",
+          "title": "Bouwdroger huren in Amsterdam",
+          "rank": 3
+        },
+        {
+          "domain": "projectie.com",
+          "title": "Bouwdroger huren - Studio Projectie",
+          "rank": 4
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "onderaannemer bouw rotterdam",
+      "cluster": "city:rotterdam",
+      "lang": "nl",
+      "city": "rotterdam",
+      "location": "NL",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-rotterdam",
+      "top_competitors": [
+        {
+          "domain": "jeekelbouw.nl",
+          "title": "Bouwbedrijf & Aannemersbedrijf Jeekel Bouw Rotterdam",
+          "rank": 5
+        },
+        {
+          "domain": "davidgroep.nl",
+          "title": "Aannemer Rotterdam | Aannemersbedrijf",
+          "rank": 6
+        },
+        {
+          "domain": "slimster.nl",
+          "title": "Top 10 Aannemers in Rotterdam - Bouwbedrijf reviews",
+          "rank": 7
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "bouwploeg huren rotterdam",
+      "cluster": "city:rotterdam",
+      "lang": "nl",
+      "city": "rotterdam",
+      "location": "NL",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-rotterdam",
+      "top_competitors": [
+        {
+          "domain": "www.huren.nl",
+          "title": "Bouwdroger huren in Rotterdam | Vanaf € 26,-",
+          "rank": 1
+        },
+        {
+          "domain": "www.abs-verhuur.nl",
+          "title": "Hoogwerker huren Rotterdam",
+          "rank": 2
+        },
+        {
+          "domain": "stadsherstel-rotterdam.nl",
+          "title": "Verhuur Archief",
+          "rank": 3
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "onderaannemer betonwerken antwerpen",
+      "cluster": "city:antwerpen:beton",
+      "lang": "nl",
+      "city": "antwerpen",
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-betonwerken",
+      "top_competitors": [
+        {
+          "domain": "www.k-kbetonwerken.be",
+          "title": "K&K BETONWERKEN | Betonkelders |Betonwerken ...",
+          "rank": 4
+        },
+        {
+          "domain": "www.astbv.be",
+          "title": "Betonwerken Antwerpen & Kempen — funderingen | AST BV",
+          "rank": 5
+        },
+        {
+          "domain": "www.keldersroba.be",
+          "title": "Roba Betonwerken - Betonkelders gieten - Kelderbouw ...",
+          "rank": 6
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "stukadoor ploeg antwerpen",
+      "cluster": "city:antwerpen:interieur",
+      "lang": "nl",
+      "city": "antwerpen",
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "top_competitors": [
+        {
+          "domain": "trustlocal.be",
+          "title": "Top 10 Stukadoors in Antwerpen | Prijzen & Reviews - Trustlocal",
+          "rank": 6
+        },
+        {
+          "domain": "www.stukadoorazo.be",
+          "title": "Stukadoor AZO Antwerpen | Gyproc, Pleister & Crepi",
+          "rank": 7
+        },
+        {
+          "domain": "www.vdab.be",
+          "title": "2 jobs voor Stukadoors gevonden in Antwerpen (Provincie)",
+          "rank": 8
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "onderaannemer betonwerken brussel",
+      "cluster": "city:brussel:beton",
+      "lang": "nl",
+      "city": "brussel",
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": 34,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-betonwerken",
+      "top_competitors": [
+        {
+          "domain": "betonwerken-lombaert.be",
+          "title": "Betonwerken Lombaert",
+          "rank": 1
+        },
+        {
+          "domain": "www.emb.be",
+          "title": "Gepolijst betonbedrijf in Brussel | Dekvloeren, terrassen ... - EMB",
+          "rank": 5
+        },
+        {
+          "domain": "www.jb-betonbouw.com",
+          "title": "Betonkelders voor particuliere woningen, flatgebouwen en ...",
+          "rank": 6
+        }
+      ],
+      "status": "deep"
+    },
+    {
+      "keyword": "stukadoor ploeg brussel",
+      "cluster": "city:brussel:interieur",
+      "lang": "nl",
+      "city": "brussel",
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "top_competitors": [
+        {
+          "domain": "www.trustup.be",
+          "title": "Selectie van de beste beste stukadoors in Brussel",
+          "rank": 1
+        },
+        {
+          "domain": "pwiic.com",
+          "title": "Stukadoor Brussel - Topkwaliteit stucwerk bij jou in de buurt",
+          "rank": 5
+        },
+        {
+          "domain": "www.prostuk.be",
+          "title": "Stukadoor Brussel | ProStuk, expert in pleisterwerken",
+          "rank": 6
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "onderaannemer betonwerken gent",
+      "cluster": "city:gent:beton",
+      "lang": "nl",
+      "city": "gent",
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-betonwerken",
+      "top_competitors": [
+        {
+          "domain": "www.gyselinck.be",
+          "title": "Gyselinck NV | Aannemer - Bouwbedrijf Gent",
+          "rank": 4
+        },
+        {
+          "domain": "europeseonderaannemingbfy.be",
+          "title": "Ondersteuning en onderaanneming voor betonwerken",
+          "rank": 5
+        },
+        {
+          "domain": "www.sdsbouwwerken.be",
+          "title": "Metselwerken Gent",
+          "rank": 6
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "stukadoor ploeg gent",
+      "cluster": "city:gent:interieur",
+      "lang": "nl",
+      "city": "gent",
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "top_competitors": [
+        {
+          "domain": "trustlocal.be",
+          "title": "Top 10 Stukadoors in Gent | Prijzen & Reviews - Trustlocal",
+          "rank": 2
+        },
+        {
+          "domain": "www.trustup.be",
+          "title": "Selectie van de beste beste stukadoors in Gent",
+          "rank": 3
+        },
+        {
+          "domain": "www.debeirrudy.be",
+          "title": "debeirrudy.be – Een gespecialiseerd stukadoorsbedrijf in de ...",
+          "rank": 4
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "onderaannemer betonwerken leuven",
+      "cluster": "city:leuven:beton",
+      "lang": "nl",
+      "city": "leuven",
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": 35,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-betonwerken",
+      "top_competitors": [
+        {
+          "domain": "www.schellensbetonvloeren.be",
+          "title": "Betonvloeren Leuven",
+          "rank": 1
+        },
+        {
+          "domain": "bouwjerome.be",
+          "title": "Hoogwaardige Betonwerken in Bierbeek",
+          "rank": 5
+        },
+        {
+          "domain": "www.bouwondernemingjacobsbv.be",
+          "title": "Algemene Bouwonderneming Jacobs in Tielt-Winge: diensten",
+          "rank": 6
+        }
+      ],
+      "status": "deep"
+    },
+    {
+      "keyword": "stukadoor ploeg leuven",
+      "cluster": "city:leuven:interieur",
+      "lang": "nl",
+      "city": "leuven",
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "top_competitors": [
+        {
+          "domain": "www.trustup.be",
+          "title": "Selectie van de beste beste stukadoors in Leuven",
+          "rank": 4
+        },
+        {
+          "domain": "trustlocal.be",
+          "title": "Top 10 Stukadoors in Leuven | Prijzen & Reviews - Trustlocal",
+          "rank": 5
+        },
+        {
+          "domain": "stukadoor-gids.be",
+          "title": "ᐅ Top 21 stukadoors in Leuven ⇒ [2026] in ① overzicht!",
+          "rank": 6
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "onderaannemer betonwerken luik",
+      "cluster": "city:luik:beton",
+      "lang": "nl",
+      "city": "luik",
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": 3,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-betonwerken",
+      "top_competitors": [
+        {
+          "domain": "www.drejaco.be",
+          "title": "Aannemer Betonwerken | Maaseik, Limburg",
+          "rank": 2
+        },
+        {
+          "domain": "betonwerken-lombaert.be",
+          "title": "Betonwerken Lombaert",
+          "rank": 4
+        },
+        {
+          "domain": "www.willemen.be",
+          "title": "Willemen Infra",
+          "rank": 5
+        }
+      ],
+      "status": "top3"
+    },
+    {
+      "keyword": "stukadoor ploeg luik",
+      "cluster": "city:luik:interieur",
+      "lang": "nl",
+      "city": "luik",
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "top_competitors": [
+        {
+          "domain": "stukadoor-gids.be",
+          "title": "Stukadoor Luik gezocht? ⇒ Gids met alle stukadoors!",
+          "rank": 2
+        },
+        {
+          "domain": "www.stukadoor-vinden.be",
+          "title": "Stukadoor Luik | Alle stukadoors in de provincie Luik",
+          "rank": 3
+        },
+        {
+          "domain": "www.jobat.be",
+          "title": "Vacatures junior stukadoor in Luik: 4 jobs",
+          "rank": 4
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "onderaannemer renovatie",
+      "cluster": "trade:renovatie",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 10,
+      "competition": "HIGH",
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-renovatie",
+      "top_competitors": [
+        {
+          "domain": "www.vancalster-vloeren.be",
+          "title": "Onderaannemer renovatie badkamer",
+          "rank": 1
+        },
+        {
+          "domain": "www.facebook.com",
+          "title": "Aannemers / Onderaannemers Gezocht - BE & NL",
+          "rank": 4
+        },
+        {
+          "domain": "www.tifre.be",
+          "title": "Samenwerken als onderaannemer | Tifre Sint-Niklaas",
+          "rank": 6
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "renovatiebouwer",
+      "cluster": "trade:renovatie",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-renovatie",
+      "top_competitors": [
+        {
+          "domain": "buildyourhome.be",
+          "title": "Renovatiebouw Van Broeckhoven",
+          "rank": 1
+        },
+        {
+          "domain": "www.bativox.be",
+          "title": "Renovatiebouw Van Broeckhoven",
+          "rank": 7
+        },
+        {
+          "domain": "topsectorlogistiek.nl",
+          "title": "OUTLOOK RENOVATIEBOUW",
+          "rank": 8
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "renovatieploeg",
+      "cluster": "trade:renovatie",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-renovatie",
+      "top_competitors": [
+        {
+          "domain": "eshop.wurth.nl",
+          "title": "Renovatieplug - Würth - Wurth.nl",
+          "rank": 1
+        },
+        {
+          "domain": "www.gb.nl",
+          "title": "Renovatieplug",
+          "rank": 2
+        },
+        {
+          "domain": "skylux.eu",
+          "title": "Renovatieplug - Skylux",
+          "rank": 3
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "bekistingploeg",
+      "cluster": "trade:ruwbouw",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-ruwbouw",
+      "top_competitors": [
+        {
+          "domain": "www.dbs-bekisting.be",
+          "title": "Bekisting huren | DBS-bekisting Zele",
+          "rank": 2
+        },
+        {
+          "domain": "www.jobat.be",
+          "title": "Vacature Ploegbaas bekisting in Antwerpen",
+          "rank": 4
+        },
+        {
+          "domain": "www.vdab.be",
+          "title": "Ploegbaas bekisting - ZEDELGEM",
+          "rank": 5
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "betonvlechters",
+      "cluster": "trade:ruwbouw",
+      "lang": "nl",
+      "city": null,
+      "location": "BE",
+      "volume": 10,
+      "competition": "LOW",
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-ruwbouw",
+      "top_competitors": [
+        {
+          "domain": "puzzel.woordenboek.nu",
+          "title": "Zoek in puzzelwoordaanvragen",
+          "rank": 1
+        },
+        {
+          "domain": "werk.belgie.be",
+          "title": "Preventie van musculoskeletale aandoeningen (MSA) bij ...",
+          "rank": 3
+        },
+        {
+          "domain": "www.mijnwoordenboek.nl",
+          "title": "Cryptogram – Wedstrijd tussen betonvlechters – 1 resultaat",
+          "rank": 4
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "sous-traitant rénovation",
+      "cluster": "trade:renovatie",
+      "lang": "fr",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-renovatie",
+      "top_competitors": [],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "entrepreneur rénovation",
+      "cluster": "trade:renovatie",
+      "lang": "fr",
+      "city": null,
+      "location": "BE",
+      "volume": 390,
+      "competition": "HIGH",
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-renovatie",
+      "top_competitors": [
+        {
+          "domain": "www.trustup.be",
+          "title": "Top 10 des meilleurs entrepreneurs en rénovation ...",
+          "rank": 4
+        },
+        {
+          "domain": "www.nova-concept.be",
+          "title": "Nova Concept: Entreprise générale de rénovation à Ath",
+          "rank": 5
+        },
+        {
+          "domain": "www.renovapro.be",
+          "title": "Entreprise de Rénovation - Rénovation de cuisine à Bruxelles",
+          "rank": 7
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "sous-traitance gros œuvre",
+      "cluster": "trade:ruwbouw",
+      "lang": "fr",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-ruwbouw",
+      "top_competitors": [
+        {
+          "domain": "www.vertuoza.com",
+          "title": "La sous-traitance dans le bâtiment : le guide ultime",
+          "rank": 2
+        },
+        {
+          "domain": "www.artibox-belgique.be",
+          "title": "Comment trouver des chantiers en sous-traitance en ...",
+          "rank": 4
+        },
+        {
+          "domain": "www.securex.be",
+          "title": "Sous-traitance dans le bâtiment : comment établir un contrat",
+          "rank": 5
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "maçons équipe",
+      "cluster": "trade:ruwbouw",
+      "lang": "fr",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-ruwbouw",
+      "top_competitors": [
+        {
+          "domain": "www.duchene-sa.be",
+          "title": "Maçon",
+          "rank": 1
+        },
+        {
+          "domain": "www.maisonscompere.be",
+          "title": "Chef d'équipe maçon (H/F)",
+          "rank": 3
+        },
+        {
+          "domain": "emplois.be.indeed.com",
+          "title": "Chef Équipe Maçon en CDI/CDD : 11 offres d'emploi",
+          "rank": 7
+        }
+      ],
+      "status": "not_ranking"
+    },
+    {
+      "keyword": "finition",
+      "cluster": "trade:interieur",
+      "lang": "fr",
+      "city": null,
+      "location": "BE",
+      "volume": 0,
+      "competition": null,
+      "your_rank": null,
+      "gsc": {},
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-afwerking",
+      "top_competitors": [
+        {
+          "domain": "fr.wikipedia.org",
+          "title": "Finition (construction)",
+          "rank": 4
+        },
+        {
+          "domain": "www.larousse.fr",
+          "title": "Définitions : finition, finitions - Dictionnaire de français ...",
+          "rank": 5
+        },
+        {
+          "domain": "batico.be",
+          "title": "Types de finition",
+          "rank": 6
+        }
+      ],
+      "status": "not_ranking"
+    }
+  ]
+}

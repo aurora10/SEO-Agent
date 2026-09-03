@@ -1,0 +1,60 @@
+# Copy to config.yaml and fill in your values.
+
+# Your Search Console property. Use the EXACT form shown in GSC:
+#   Domain property:   sc-domain:example.com
+#   URL-prefix property: https://www.example.com/
+gsc_property: "sc-domain:example.com"
+
+# Path to your OAuth client secret JSON (downloaded from Google Cloud Console,
+# see README step 2). First run will open a browser for consent and save token.json.
+oauth_client_secret: "credentials/client_secret.json"
+token_file: "credentials/token.json"
+
+# SQLite storage
+db_path: "data/seo.db"
+
+# Markets: language + country combos to segment queries by later.
+# These also drive which (country, language) DataForSEO queries Agent 2 runs.
+markets:
+  - language: nl
+    country: BE
+  - language: nl
+    country: NL
+  - language: fr
+    country: BE
+
+# How many days of history to backfill on first run (GSC max ~16 months = 480)
+backfill_days: 90
+
+# Agent 2: market analysis
+your_domain: "constructief-bouw.be"
+market_db: "data/market.db"
+
+dataforseo:
+  login: "YOUR_DATAFORSEO_LOGIN_EMAIL"
+  password: "YOUR_DATAFORSEO_API_PASSWORD"  # from app.dataforseo.com -> API access
+
+# Agent 3: LLM content generator (OpenAI)
+llm:
+  api_key: "sk-..."          # OpenAI key
+  model: "gpt-4o-mini"       # ~€0.02/page draft
+market_analysis: "data/market-analysis.json"
+
+# Email notification when drafts are ready for review
+notify:
+  to: "you@example.com"
+  from: "aurora10@gmail.com"
+  gmail_user: "aurora10@gmail.com"
+  gmail_app_password: "xxxx xxxx xxxx xxxx"   # Gmail app password (NOT login pwd)
+  subject_prefix: "[SEO drafts]"
+
+# Publishing: open a GitHub PR with the drafts (Option A)
+# Get token at https://github.com/settings/personal-access-tokens (fine-grained,
+# Contents: Read/Write + Pull requests: Read/Write on this repo only)
+github:
+  token: "github_pat_..."
+  repo: "aurora10/constructief"
+  base_branch: "google-sheets"   # what Vercel deploys
+
+# Rows per API page (max 25000)
+row_limit: 25000
