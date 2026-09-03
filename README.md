@@ -117,6 +117,33 @@ fetch_market (Agent 2)  ->  analyze_market (Agent 2)
     -> next market-analysis cycle
 ```
 
+## Run on a VPS (Docker)
+
+The agents run in a self-scheduling Docker container (cron inside), deployed via
+GitHub Actions. Secrets live in a `.env` on the VPS — none are in the repo/image.
+
+- `Dockerfile`, `entrypoint.sh`, `crontab`, `docker-compose.yml`, `deploy/setup_vps.sh`
+- `.github/workflows/deploy.yml` — builds + pushes `DockerHubUser/seo-agent` on push
+  to `main`, and optionally redeploys the VPS over SSH.
+
+**One-time VPS setup** (Debian/Ubuntu, as root):
+```bash
+git clone https://github.com/aurora10/SEO-Agent.git /srv/seo-agent
+cd /srv/seo-agent && sudo bash deploy/setup_vps.sh
+# then edit .env with real secrets (it was created from .env.example):
+#   - copy values from your local config.yaml
+#   - base64 -i credentials/client_secret.json | tr -d '\n'   -> CLIENT_SECRET_JSON
+#   - base64 -i credentials/token.json      | tr -d '\n'      -> TOKEN_JSON
+docker compose up -d          # (or re-run setup_vps.sh which starts it)
+```
+
+**GitHub Secrets** (repo → Settings → Secrets and variables → Actions):
+`DOCKERHUB_USERNAME`, `DOCKERHUB_TOKEN`, and optionally `VPS_HOST`,
+`VPS_USER`, `VPS_PORT`, `VPS_SSH_KEY`, `VPS_DIR` (for auto-redeploy).
+
+The container's cron: `collect_gsc` daily, `fetch_market`/`analyze_market`/
+`generate_content`/`gsc_monitor` weekly. Logs: `docker compose logs -f`.
+
 ## Troubleshooting
 
 - **"Site not found / permission denied"** → `gsc_property` string is wrong.

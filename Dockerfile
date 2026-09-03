@@ -9,7 +9,7 @@ ENV PYTHONUNBUFFERED=1 \
 
 # cron for the in-container scheduler + curl for healthchecks / compat
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends cron curl \
+    && apt-get install -y --no-install-recommends cron curl git \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
