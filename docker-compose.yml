@@ -1,0 +1,12 @@
+services:
+  seo-agent:
+    image: aurora1010/seo-agent:latest
+    container_name: seo-agent
+    # All secrets + config are injected from the VPS .env (never in the image).
+    env_file: .env
+    volumes:
+      - ./data:/app/data            # persist SQLite DBs (seo.db, market.db)
+      - ./credentials:/app/credentials   # persist the GSC token (refreshed by runs)
+      - ./repo:/app/repo            # constructief site checkout (for Agent 3 / monitor)
+    restart: unless-stopped
+    # The container self-schedules: entrypoint installs crontab and runs cron.

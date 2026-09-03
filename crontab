@@ -1,0 +1,16 @@
+# In-container cron schedule for the seo-agent pipeline.
+# Format:  min hour dom mon dow  user  command
+# The pipeline is idempotent (dedupes / caches), so re-runs are safe.
+
+# --- Agent 1: GSC collector (daily, ~06:05 local) ---
+5 6  * * *  root  cd /app && python src/collect_gsc.py --config /app/config.yaml >> /app/data/collector.log 2>&1
+
+# --- Agent 2: market analysis (weekly, Monday ~06:30) ---
+30 6  * * 1  root  cd /app && python src/fetch_market.py --config /app/config.yaml >> /app/data/fetch_market.log 2>&1
+45 6  * * 1  root  cd /app && python src/analyze_market.py --config /app/config.yaml >> /app/data/analyze.log 2>&1
+
+# --- Agent 3: content writer (weekly, Monday ~07:00; needs the constructief repo at /app/repo) ---
+0 7   * * 1  root  cd /app && python src/generate_content.py --config /app/config.yaml --repo /app/repo >> /app/data/generate.log 2>&1
+
+# --- Index monitor (weekly, Monday ~07:15) ---
+15 7  * * 1  root  cd /app && python src/gsc_monitor.py --config /app/config.yaml --repo /app/repo >> /app/data/monitor.log 2>&1

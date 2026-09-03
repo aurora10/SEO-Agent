@@ -1,0 +1,21 @@
+# Docker build context: keep secrets + local data out of the image.
+.git
+.gitignore
+.github
+.venv
+__pycache__
+*.pyc
+
+# never bake secrets / local state into the image
+config.yaml
+credentials/
+data/
+reports/
+drafts/
+*.db
+*.log
+
+# deployment files (not needed at build time)
+docker-compose.yml
+.env
+.env.example
