@@ -14,6 +14,7 @@ credentials/
 
 # --- Local data / generated artifacts ---
 data/*.db
+data/*.log
 reports/
 drafts/
 
