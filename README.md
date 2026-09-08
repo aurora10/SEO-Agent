@@ -119,10 +119,10 @@ fetch_market (Agent 2)  ->  analyze_market (Agent 2)
 
 ## Run on a VPS (Docker)
 
-The agents run in a self-scheduling Docker container (cron inside), deployed via
+The agents run in a self-scheduling Docker container (a Python scheduler daemon), deployed via
 GitHub Actions. Secrets live in a `.env` on the VPS — none are in the repo/image.
 
-- `Dockerfile`, `entrypoint.sh`, `crontab`, `docker-compose.yml`, `deploy/setup_vps.sh`
+- `Dockerfile`, `entrypoint.sh`, `src/scheduler.py`, `docker-compose.yml`, `deploy/setup_vps.sh`
 - `.github/workflows/deploy.yml` — builds + pushes `DockerHubUser/seo-agent` on push
   to `main`, and optionally redeploys the VPS over SSH.
 
@@ -141,8 +141,33 @@ docker compose up -d          # (or re-run setup_vps.sh which starts it)
 `DOCKERHUB_USERNAME`, `DOCKERHUB_TOKEN`, and optionally `VPS_HOST`,
 `VPS_USER`, `VPS_PORT`, `VPS_SSH_KEY`, `VPS_DIR` (for auto-redeploy).
 
-The container's cron: `collect_gsc` daily, `fetch_market`/`analyze_market`/
-`generate_content`/`gsc_monitor` weekly. Logs: `docker compose logs -f`.
+The container's scheduler: `collect_gsc` daily, `fetch_market`/`analyze_market`/
+`generate_content`/`gsc_monitor` weekly. Every run is logged to `data/jobs.log`, and a
+failure emails you. Logs: `docker compose logs -f`.
+
+## Merge new content (runbook)
+
+After `generate_content` emails drafts, get them live one of two ways:
+
+**Option A — manual commit & push (most control)**
+```bash
+cd /path/to/constructief
+# merge each draft fragment into src/messages/nl.json (and fr.json)
+# under its top-level key (e.g. "EmployersPage", "TradeNation", "Trades")
+git add src/messages/nl.json src/messages/fr.json
+git commit -m "SEO: apply Agent 3 content drafts"
+git push origin google-sheets        # Vercel deploys
+```
+
+**Option B — open a PR (via publish_drafts, safer)**
+```bash
+cd /path/to/seo-agent
+python src/publish_drafts.py --config config.yaml --repo /path/to/constructief --dry-run   # preview
+python src/publish_drafts.py --config config.yaml --repo /path/to/constructief             # opens a PR
+# then on GitHub: review the PR -> "Merge pull request" -> Vercel deploys
+```
+
+`generate_content` never touches the repo directly — it only produces drafts for you to review.
 
 ## Troubleshooting
 

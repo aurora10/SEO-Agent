@@ -20,13 +20,11 @@ else
         || echo "[seo-agent] WARN: constructief clone failed (Agent 3 / monitor will error)"
 fi
 
-# Install the in-container cron schedule.
-# cron on Debian treats files in /etc/cron.d/ as system crontabs (user = next field).
-cp /app/crontab /etc/cron.d/seo-agent
-chmod 0644 /etc/cron.d/seo-agent
-
-# Ensure the cron log dir exists for the jobs that append to it.
+# Ensure the data dir exists (persistent volume).
 mkdir -p /app/data
 
-echo "[seo-agent] starting cron in foreground (container stays up, self-schedules)"
-exec cron -f
+# Run the self-scheduling Python daemon as the foreground process (PID 1).
+# It fires the pipeline jobs on schedule, logs to data/jobs.log, and emails on
+# failure — more reliable than system cron inside a slim container.
+echo "[seo-agent] starting scheduler in foreground (container stays up, self-schedules)"
+exec python src/scheduler.py

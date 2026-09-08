@@ -37,14 +37,28 @@ WHY THESE DRAFTS EXIST
 ----------------------
 {report}
 
-WHAT TO DO (5-10 min)
----------------------
-1. Review each attached .json file (they contain proposed copy;
-   edit freely — it's your voice, LLM is just the drafter).
-2. Merge approved fragments into src/messages/nl.json of the
-   constructief repo (exact keys are inside each file).
-3. git add, commit, push to google-sheets — Vercel deploys.
-4. Next GSC sync will measure the impact.
+HOW TO GET THEM LIVE (~10 min)
+------------------------------
+The proposed copy is in the attached .json files (the keys are the exact
+targets inside constructief's src/messages/nl.json / fr.json). Two ways:
+
+OPTION A — manual commit & push (most control)
+  1. Edit each attached .json — it's your voice, the LLM is just the drafter.
+  2. On your machine, in the constructief repo, merge each fragment into
+     src/messages/nl.json (and fr.json for any FR draft). Put the fragment under
+     its top-level key (e.g. "EmployersPage", "TradeNation", "Trades").
+  3. cd constructief
+     git add src/messages/nl.json src/messages/fr.json
+     git commit -m "SEO: apply Agent 3 content drafts"
+     git push origin google-sheets      # Vercel deploys automatically
+
+OPTION B — open a PR (via publish_drafts, safer)
+  1. cd /srv/seo-agent (or your local seo-agent checkout)
+     python src/publish_drafts.py --config config.yaml --repo /path/to/constructief --dry-run   # preview
+  2. python src/publish_drafts.py --config config.yaml --repo /path/to/constructief             # opens a PR
+  3. On GitHub: open the PR, review/branch, then "Merge pull request" -> Vercel deploys.
+
+After it deploys, next GSC sync will measure the impact.
 
 Files attached: {', '.join(f.name for f in files)}
 

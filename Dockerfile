@@ -7,9 +7,9 @@ ENV PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=1 \
     TZ=Europe/Brussels
 
-# cron for the in-container scheduler + curl for healthchecks / compat
+# curl + git for healthchecks / the constructief auto-clone
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends cron curl git \
+    && apt-get install -y --no-install-recommends curl git \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
@@ -22,7 +22,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY src ./src
 COPY config.example.yaml ./
 COPY entrypoint.sh ./
-COPY crontab ./crontab
 COPY scripts ./scripts
 RUN chmod +x entrypoint.sh scripts/*.py
 
