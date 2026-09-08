@@ -25,7 +25,12 @@ def get_service(client_secret_path: str, token_path: str):
     except Exception:
         creds = None
     if creds and creds.expired and creds.refresh_token:
-        creds.refresh(Request())
+        try:
+            creds.refresh(Request())
+        except Exception:
+            # Token revoked/expired (invalid_grant): fall through and re-consent
+            # via the browser flow below rather than crashing.
+            creds = None
     if not creds or not creds.valid:
         flow = InstalledAppFlow.from_client_secrets_file(client_secret_path, SCOPES)
         creds = flow.run_local_server(port=0)
