@@ -20,7 +20,7 @@ APP = "/app"
 
 # Each job: minute, hour, dow, name, argv, timeout, report(True=email a summary on success), action(what you should do)
 SCHEDULE = [
-    ("5",  "*", "*", "collect_gsc",      ["python", "src/collect_gsc.py",     "--config", "/app/config.yaml"], 3600, False,
+    ("5",  "6", "*", "collect_gsc",      ["python", "src/collect_gsc.py",     "--config", "/app/config.yaml"], 3600, False,
      "Nothing to do — GSC data was collected automatically."),
     ("30", "6", "1", "fetch_market",     ["python", "src/fetch_market.py",    "--config", "/app/config.yaml"], 1800, False,
      "Nothing to do — keyword volumes/SERPs cached for analysis."),
