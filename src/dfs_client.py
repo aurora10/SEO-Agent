@@ -28,7 +28,16 @@ class DFS:
 
     def _post(self, path: str, payload: list[dict]) -> dict:
         r = requests.post(f"{API}{path}", json=payload, auth=self.auth, timeout=120)
-        r.raise_for_status()
+        if r.status_code != 200:
+            # DataForSEO still returns a JSON body with the real reason, e.g.
+            # 40104 "Please verify your account", 40203 insufficient funds, etc.
+            try:
+                body = r.json()
+                raise RuntimeError(
+                    f"DataForSEO HTTP {r.status_code} "
+                    f"(status_code {body.get('status_code')}): {body.get('status_message')}")
+            except ValueError:
+                r.raise_for_status()
         data = r.json()
         if data.get("status_code") not in (20000,):
             raise RuntimeError(f"DataForSEO error {data.get('status_code')}: "

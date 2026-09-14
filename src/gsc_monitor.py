@@ -81,7 +81,19 @@ def inspect(service, site: str, url: str) -> dict:
 
 
 def is_indexed(row: dict) -> bool:
+    """True only when Google actually indexed the page.
+
+    Note: 'Discovered - currently not indexed', 'Crawled - currently not indexed',
+    'Duplicate...', 'Excluded...', 'URL is unknown to Google' all contain the
+    substring 'indexed' but are NOT indexed — so check the negatives first.
+    """
     cov = (row.get("coverage") or "").lower()
+    if not cov:
+        return False
+    negatives = ("not indexed", "unknown to google", "excluded", "duplicate",
+                 "alternate page", "noindex", "blocked", "error", "soft 404")
+    if any(n in cov for n in negatives):
+        return False
     return "indexed" in cov
 
 
