@@ -33,7 +33,20 @@ def get_service(client_secret_path: str, token_path: str):
             creds = None
     if not creds or not creds.valid:
         flow = InstalledAppFlow.from_client_secrets_file(client_secret_path, SCOPES)
-        creds = flow.run_local_server(port=0)
+        try:
+            creds = flow.run_local_server(port=0)
+        except Exception as e:
+            # Headless container: there is no browser to run the consent flow.
+            raise RuntimeError(
+                "GSC token invalid and no browser available to re-consent "
+                "(headless container). Fix: re-authenticate on a machine WITH a "
+                "browser (run `python src/collect_gsc.py --config config.yaml` "
+                "locally), then update TOKEN_JSON in .env (base64 of the fresh "
+                "credentials/token.json) and restart the container. "
+                "IMPORTANT: if your OAuth consent screen is in 'Testing' status, "
+                "Google expires refresh tokens every 7 days — click 'Publish app' "
+                "on the consent screen to stop this recurring."
+            ) from e
         with open(token_path, "w") as f:
             f.write(creds.to_json())
     return build("searchconsole", "v1", credentials=creds)

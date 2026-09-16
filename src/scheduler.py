@@ -77,7 +77,7 @@ def _log(ts: str, name: str, status: str, out: str) -> None:
         f.write("-" * 60 + "\n")
 
 
-def run_one(cfg: dict, name: str, cmd: list, timeout: int, report: bool, action: str) -> None:
+def run_one(cfg: dict, name: str, cmd: list, timeout: int, report: bool, action: str) -> int:
     ts = dt.datetime.now().isoformat(timespec="seconds")
     exit_code, out, ok = None, "", True
     try:
@@ -104,6 +104,8 @@ def run_one(cfg: dict, name: str, cmd: list, timeout: int, report: bool, action:
             emailer.send(cfg, f"[SEO] {name}: done", body)
     except Exception as e:  # noqa: BLE001
         print("  -> notification email could not be sent:", type(e).__name__, e)
+
+    return 0 if ok else 1
 
 
 def main() -> None:
