@@ -23,16 +23,49 @@ import yaml
 BASE = "https://constructief-bouw.be"
 PAGE_MAP = {
     "core": "werkgevers",
-    "trade:gevel": "diensten/onderaannemer-gevelwerk",
+    # Must match the real route slugs (flagshipTrades in the site's
+    # src/data/cityContent.ts). Four entries used to point at slugs that do not
+    # exist — gevelwerk, betonwerken, dakwerken, afwerking — so the analysis was
+    # handing Agent 3 target pages that 404.
+    "trade:gevel": "diensten/onderaannemer-gevel",
     "trade:renovatie": "diensten/onderaannemer-renovatie",
-    "trade:beton": "diensten/onderaannemer-betonwerken",
-    "trade:dak": "diensten/onderaannemer-dakwerken",
+    "trade:beton": "diensten/onderaannemer-beton",
+    "trade:dak": "diensten/onderaannemer-dak",
     "trade:ruwbouw": "diensten/onderaannemer-ruwbouw",
-    "trade:interieur": "diensten/onderaannemer-afwerking",
+    "trade:interieur": "diensten/onderaannemer-interieur",
 }
 CITY_PAGE = "diensten/onderaannemer-{city}"
 
+# Fallbacks mirroring the site. --repo overrides both from the site checkout so
+# a target page is only recommended when the route really exists.
+FLAGSHIP_TRADES = {"gevel", "renovatie", "beton", "dak", "ruwbouw", "interieur"}
+FLAGSHIP_CITIES = {"antwerpen", "gent", "leuven", "brussel"}
+
 MISSING = "MISSING (create page)"
+
+
+def parse_flagships(repo):
+    """(trades, cities) from the site, falling back to the lists above."""
+    import re
+
+    trades, cities = set(FLAGSHIP_TRADES), set(FLAGSHIP_CITIES)
+    if not repo:
+        return trades, cities
+    for rel, pattern, which in (
+        ("src/data/cityContent.ts", r"flagshipTrades\s*=\s*\[([^\]]+)\]", "trades"),
+        ("src/data/cities.ts", r"flagshipCitySlugs\s*=\s*\[([^\]]+)\]", "cities"),
+    ):
+        try:
+            found = re.search(pattern, open(os.path.join(repo, rel)).read())
+        except OSError:
+            continue
+        if found:
+            values = set(re.findall(r"'([^']+)'", found.group(1)))
+            if which == "trades":
+                trades = values
+            else:
+                cities = values
+    return trades, cities
 
 
 def _locale_for(lang: str) -> str:
@@ -40,16 +73,22 @@ def _locale_for(lang: str) -> str:
     return {"fr": "fr", "en": "en"}.get(lang, "nl")
 
 
-def best_url_for(kw) -> str:
+def best_url_for(kw, flagships=None) -> str:
+    trades, cities = flagships or (FLAGSHIP_TRADES, FLAGSHIP_CITIES)
     cluster = kw.cluster
-    city = kw.city
     locale = _locale_for(kw.lang)
     if cluster.startswith("city:"):
         parts = cluster.split(":")
         city = parts[1]
         if len(parts) == 3:
-            # city+trade: prefer the trade's page, language-aware
-            path = PAGE_MAP.get(f"trade:{parts[2]}")
+            # city+trade: point at the most specific page that exists. The
+            # trade+city landing is the best target for a city+trade query, but
+            # only for flagship trades/cities — other combinations render a thin
+            # page (or none), so those keep the country-level trade page.
+            trade = parts[2]
+            if trade in trades and city in cities:
+                return f"{BASE}/{locale}/diensten/onderaannemer-{trade}-{city}"
+            path = PAGE_MAP.get(f"trade:{trade}")
             return f"{BASE}/{locale}/{path}" if path else MISSING
         return f"{BASE}/{locale}/{CITY_PAGE.format(city=city)}"
     path = PAGE_MAP.get(cluster)
@@ -91,8 +130,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", default="config.yaml")
     ap.add_argument("--llm", action="store_true", help="LLM gap analysis (needs llm section in config)")
+    ap.add_argument("--repo", default=None,
+                    help="site checkout; used to check which trade/city pages really exist")
     args = ap.parse_args()
     cfg = yaml.safe_load(open(args.config))
+    flagships = parse_flagships(args.repo)
 
     from keywords import build
     universe = {k.keyword: k for k in build()}
@@ -123,7 +165,7 @@ def main():
             "competition": vol[1] if vol else None,
             "your_rank": serp["your_rank"],
             "gsc": gsc.get(kw, {}),
-            "target_page": best_url_for(k),
+            "target_page": best_url_for(k, flagships),
             "top_competitors": [
                 {"domain": o["domain"], "title": o["title"], "rank": o["rank"]}
                 for o in organic[:5]

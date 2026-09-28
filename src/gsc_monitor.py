@@ -48,13 +48,16 @@ def parse_flagships(repo: str):
 def priority_urls(repo: str) -> list[str]:
     """The pages we care most about:
     - werkgevers (commercial flagship)
-    - base trade pages: /diensten/onderaannemer-{trade} (nl + fr)
-    - city trade+city pages: /diensten/onderaannemer-{trade}-{city} (nl + fr) — the
-      pages that actually rank for city+trade queries.
+    - base trade pages: /diensten/onderaannemer-{trade}
+    - city trade+city pages: /diensten/onderaannemer-{trade}-{city} — the pages
+      that actually rank for city+trade queries.
+    All three locales are checked. ru used to be noindexed and excluded from the
+    sitemap; it is now indexable for these trade pages (they carry unique
+    per-trade-per-city copy), so their indexation has to be tracked too.
     """
     trades, cities = parse_flagships(repo)
     urls = [f"{BASE}/nl/werkgevers"]
-    for lang in ("nl", "fr"):
+    for lang in ("nl", "fr", "ru"):
         for t in sorted(trades):
             urls.append(f"{BASE}/{lang}/diensten/onderaannemer-{t}")
         for c in sorted(cities):

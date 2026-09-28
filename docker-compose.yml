@@ -8,5 +8,7 @@ services:
       - ./data:/app/data            # persist SQLite DBs (seo.db, market.db)
       - ./credentials:/app/credentials   # persist the GSC token (refreshed by runs)
       - ./repo:/app/repo            # constructief site checkout (for Agent 3 / monitor)
+      - ./reports:/app/reports      # persist reports/market-analysis.md between restarts
     restart: unless-stopped
-    # The container self-schedules: entrypoint installs crontab and runs cron.
+    # The container self-schedules: entrypoint.sh execs src/scheduler.py (PID 1),
+    # which runs the jobs itself — no system cron inside the container.

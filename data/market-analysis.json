@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03",
+  "generated": "2026-09-28",
   "clusters": {
     "core": {
       "volume": 80,
@@ -156,7 +156,10 @@
       "volume": 40,
       "competition": "MEDIUM",
       "your_rank": null,
-      "gsc": {},
+      "gsc": {
+        "gsc_pos": 23.8,
+        "gsc_imp": 4.0
+      },
       "target_page": "https://constructief-bouw.be/nl/werkgevers",
       "top_competitors": [
         {
@@ -367,8 +370,8 @@
       "competition": null,
       "your_rank": null,
       "gsc": {
-        "gsc_pos": 93.7,
-        "gsc_imp": 15.0
+        "gsc_pos": 25.6,
+        "gsc_imp": 19.0
       },
       "target_page": "https://constructief-bouw.be/nl/werkgevers",
       "top_competitors": [
@@ -610,7 +613,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-betonwerken",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-beton",
       "top_competitors": [
         {
           "domain": "betonwerken-lombaert.be",
@@ -640,7 +643,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-betonwerken",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-beton",
       "top_competitors": [
         {
           "domain": "www.vdab.be",
@@ -670,7 +673,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-betonwerken",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-beton",
       "top_competitors": [
         {
           "domain": "www.aoetechniek.nl",
@@ -700,7 +703,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-gevelwerk",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-gevel",
       "top_competitors": [
         {
           "domain": "www.eurogevel.be",
@@ -730,7 +733,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-gevelwerk",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-gevel",
       "top_competitors": [
         {
           "domain": "www.vancalster-vloeren.be",
@@ -760,7 +763,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-gevelwerk",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-gevel",
       "top_competitors": [
         {
           "domain": "www.isolatiemateriaal.be",
@@ -790,7 +793,7 @@
       "competition": "HIGH",
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-dakwerken",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-dak",
       "top_competitors": [
         {
           "domain": "be.jooble.org",
@@ -820,7 +823,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-dakwerken",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-dak",
       "top_competitors": [
         {
           "domain": "www.energyprotect.be",
@@ -850,7 +853,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-dakwerken",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-dak",
       "top_competitors": [
         {
           "domain": "www.kamildak.nl",
@@ -880,7 +883,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-interieur",
       "top_competitors": [
         {
           "domain": "schoeffaerts.be",
@@ -910,7 +913,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-interieur",
       "top_competitors": [
         {
           "domain": "stukadoorinhuren.nl",
@@ -940,7 +943,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-interieur",
       "top_competitors": [
         {
           "domain": "nl.linkedin.com",
@@ -970,7 +973,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-interieur",
       "top_competitors": [
         {
           "domain": "www.vdab.be",
@@ -1000,7 +1003,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-interieur",
       "top_competitors": [
         {
           "domain": "eploegbouw.nl",
@@ -1120,7 +1123,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-betonwerken",
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-beton",
       "top_competitors": [
         {
           "domain": "wannijn.be",
@@ -1150,7 +1153,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-betonwerken",
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-beton",
       "top_competitors": [
         {
           "domain": "www.sobemo.be",
@@ -1180,7 +1183,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-gevelwerk",
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-gevel",
       "top_competitors": [
         {
           "domain": "www.btpfusion.com",
@@ -1210,7 +1213,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-gevelwerk",
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-gevel",
       "top_competitors": [
         {
           "domain": "www.euronet-vanbelle.be",
@@ -1240,7 +1243,7 @@
       "competition": "HIGH",
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-dakwerken",
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-dak",
       "top_competitors": [
         {
           "domain": "www.facebook.com",
@@ -1270,7 +1273,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-dakwerken",
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-dak",
       "top_competitors": [
         {
           "domain": "www.jobteaser.com",
@@ -1300,7 +1303,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-afwerking",
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-interieur",
       "top_competitors": [
         {
           "domain": "fr.indeed.com",
@@ -1330,7 +1333,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-afwerking",
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-interieur",
       "top_competitors": [
         {
           "domain": "expert-carreleur.be",
@@ -1630,7 +1633,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-betonwerken",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-beton-antwerpen",
       "top_competitors": [
         {
           "domain": "www.k-kbetonwerken.be",
@@ -1660,7 +1663,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-interieur-antwerpen",
       "top_competitors": [
         {
           "domain": "trustlocal.be",
@@ -1690,7 +1693,7 @@
       "competition": null,
       "your_rank": 34,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-betonwerken",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-beton-brussel",
       "top_competitors": [
         {
           "domain": "betonwerken-lombaert.be",
@@ -1720,7 +1723,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-interieur-brussel",
       "top_competitors": [
         {
           "domain": "www.trustup.be",
@@ -1750,7 +1753,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-betonwerken",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-beton-gent",
       "top_competitors": [
         {
           "domain": "www.gyselinck.be",
@@ -1780,7 +1783,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-interieur-gent",
       "top_competitors": [
         {
           "domain": "trustlocal.be",
@@ -1810,7 +1813,7 @@
       "competition": null,
       "your_rank": 35,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-betonwerken",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-beton-leuven",
       "top_competitors": [
         {
           "domain": "www.schellensbetonvloeren.be",
@@ -1840,7 +1843,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-interieur-leuven",
       "top_competitors": [
         {
           "domain": "www.trustup.be",
@@ -1870,7 +1873,7 @@
       "competition": null,
       "your_rank": 3,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-betonwerken",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-beton",
       "top_competitors": [
         {
           "domain": "www.drejaco.be",
@@ -1900,7 +1903,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-afwerking",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-interieur",
       "top_competitors": [
         {
           "domain": "stukadoor-gids.be",
@@ -2184,7 +2187,7 @@
       "competition": null,
       "your_rank": null,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-afwerking",
+      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-interieur",
       "top_competitors": [
         {
           "domain": "fr.wikipedia.org",

@@ -86,26 +86,55 @@ analysis has volume and you rank poorly**. Run:
 python src/generate_content.py --config config.yaml --repo /path/to/constructief
 ```
 
-What it writes to `drafts/` (nothing touches the repo until you paste):
+What it writes to `drafts/` (nothing touches the repo until you paste). A `__<lang>`
+suffix marks the target locale (`nl`/`fr`/`ru`); no suffix means `nl`:
 
 | Draft | Trigger | Content |
 |---|---|---|
-| `werkgevers.json` | core keywords with volume, you rank >10 | rewrite of `EmployersPage.title/subtitle` + `Metadata` |
+| `werkgevers.json` / `werkgevers__fr.json` | core keywords in that language with volume, you rank >10 | rewrite of `EmployersPage.title/subtitle` + `Metadata` in `nl.json` / `fr.json` |
 | `Trades__<trade>.json` | `trade:<trade>` cluster has volume, trade missing from `nl.json` **and** route exists in `flagshipTrades` | complete `Trades.<trade>` block |
 | `city__<city>.json` | `city:<city>` cluster has volume, `CitiesSeo.<city>` missing | `CitiesSeo` + `CityRegio` entries |
+| `TradeNation_<trade>__<lang>.json` | `TradeNation.<trade>` missing for that locale | country-level copy for `/diensten/onderaannemer-<trade>` |
+| `TradeCity_<trade>__<lang>.json` | `TradeCity.<trade>` missing for that locale | unique paragraph per trade x city for `/diensten/onderaannemer-<trade>-<city>` |
 | `report.md` | always | per draft: the keywords, volumes, your rank, why the draft exists |
 
+Generated for **nl, fr and ru**, so all three locales stay at parity.
+
 Guards (verified in tests):
+- **Evidence is language-scoped.** Keywords carry `lang`. A Dutch draft only ever
+  sees Dutch keywords and vice versa — the French core keywords
+  (`sous-traitant construction`) used to be handed to the Dutch rewrite, which is
+  how French text kept leaking into the Dutch `werkgevers` subtitle.
+- **Language guard.** Every draft is scanned before it is written; a draft that
+  contains foreign-language markers (or non-allowlisted Latin script in a Russian
+  draft) is *excluded*, reported in `drafts/report.md`, and the run exits non-zero.
+- **Each slot is drafted once** (`data/agent3_applied.json`). Re-runs report
+  "draft still pending merge" or "already applied" instead of regenerating the
+  same werkgevers rewrite every week. Force one with `--redraft <slot>`.
 - Trade drafts skipped if the route is not in `flagshipTrades` — no orphan copy.
 - FR page (`/fr/sous-traitance-batiment`) is never touched — it exists, is
   complete, FR-only by design (nl 404s intentionally).
 - Schema copied exactly from your repo's `Trades.gevel` template.
 
 Workflow: **check `drafts/report.md` first** — it shows why each draft exists
-(keyword, volume, your rank). Then review/edit the JSON, merge into
-`src/messages/nl.json`, commit.
+(keyword, volume, your rank) and what was skipped. Then review/edit the JSON,
+merge into `src/messages/<lang>.json`, commit.
 
 Cost: ≈ €0.10/run with `gpt-4o-mini`.
+
+### Bulk RU content (one-off / refresher)
+
+`generate_content.py` covers RU as part of the weekly cycle. For a bulk pass over
+every trade x city pair there are two standalone helpers, useful when you add
+trades/cities and need the whole matrix filled at once:
+
+```bash
+python scripts/gen_ru_trade_city.py   --repo /path/to/constructief   # 6 trades x 4 cities
+python scripts/gen_ru_trade_nation.py --repo /path/to/constructief   # 6 base trade pages
+```
+
+Both validate their own output (Cyrillic only, no Dutch/French leakage, no
+near-duplicate paragraphs between cities or trades) and write to `drafts/`.
 
 ## The loop
 
@@ -152,9 +181,14 @@ After `generate_content` emails drafts, get them live one of two ways:
 **Option A — manual commit & push (most control)**
 ```bash
 cd /path/to/constructief
-# merge each draft fragment into src/messages/nl.json (and fr.json)
-# under its top-level key (e.g. "EmployersPage", "TradeNation", "Trades")
-git add src/messages/nl.json src/messages/fr.json
+# merge each draft fragment into src/messages/<lang>.json under its top-level
+# key (e.g. "EmployersPage", "TradeNation", "TradeCity", "Trades").
+# scripts/merge_messages.py does this surgically — it replaces only the namespace
+# that changed, keeps existing values unless --force, backs the file up first, and
+# refuses to write anything that is not valid JSON:
+python /path/to/seo-agent/scripts/merge_messages.py \
+    --file src/messages/ru.json --payload /path/to/seo-agent/drafts/TradeCity.ru.json --dry-run
+git add src/messages/nl.json src/messages/fr.json src/messages/ru.json
 git commit -m "SEO: apply Agent 3 content drafts"
 git push origin google-sheets        # Vercel deploys
 ```
@@ -168,6 +202,22 @@ python src/publish_drafts.py --config config.yaml --repo /path/to/constructief  
 ```
 
 `generate_content` never touches the repo directly — it only produces drafts for you to review.
+
+## Indexation policy (site-side, worth not regressing)
+
+- **Trade pages** (`/diensten/onderaannemer-{trade}` and
+  `onderaannemer-{trade}-{city}`) are indexable and sitemapped in **all three
+  locales, ru included**. That is only safe because each page carries unique
+  copy per trade and per city; if trade x city pages are ever mass-generated
+  again without unique copy, Google files them as near-duplicates
+  ("Discovered - currently not indexed").
+- **City-only pages** (`onderaannemer-{city}`) are indexable only for the
+  flagship cities, and never for ru.
+- hreflang alternates are reciprocal on trade pages: `nl`, `fr`, `ru`,
+  `x-default`. Non-indexed copies (thin city pages, ru city pages) declare only
+  `x-default` -> the nl version.
+- The weekly `gsc_monitor` inspects **91 URLs** (nl/fr/ru x trade + trade x city
+  + `/nl/werkgevers`).
 
 ## Troubleshooting
 

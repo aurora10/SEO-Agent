@@ -24,7 +24,7 @@ SCHEDULE = [
      "Nothing to do — GSC data was collected automatically."),
     ("30", "6", "1", "fetch_market",     ["python", "src/fetch_market.py",    "--config", "/app/config.yaml"], 1800, False,
      "Nothing to do — keyword volumes/SERPs cached for analysis."),
-    ("45", "6", "1", "analyze_market",   ["python", "src/analyze_market.py",  "--config", "/app/config.yaml"], 900, True,
+    ("45", "6", "1", "analyze_market",   ["python", "src/analyze_market.py",  "--config", "/app/config.yaml", "--repo", "/app/repo"], 900, True,
      "Open reports/market-analysis.md (top clusters/opportunities). To turn them into "
      "content now: python src/generate_content.py --config config.yaml --repo /app/repo  "
      "(or wait for the Monday cron). The content drafts arrive in a separate email with the "
