@@ -33,8 +33,12 @@ SCHEDULE = [
      "It emails the drafts + next steps (review the JSON, merge into src/messages/nl.json "
      "and fr.json, then git add/commit/push — or run publish_drafts.py to open a PR)."),
     ("15", "7", "1", "gsc_monitor",      ["python", "src/gsc_monitor.py",     "--config", "/app/config.yaml", "--repo", "/app/repo"], 1800, True,
-     "If any page above is NOT indexed: request indexing in GSC (or fix the crawl issue). "
-     "If all indexed, nothing to do."),
+     "If a page is NOT indexed after 2-3 weeks, request indexing for just that URL "
+     "in GSC. Everything else needs no action — the sitemap is resubmitted for you."),
+    ("30", "7", "1", "submit_sitemap",   ["python", "src/submit_sitemap.py",  "--config", "/app/config.yaml"], 300, True,
+     "Nothing to do: this is the automated replacement for clicking 'Resubmit "
+     "sitemap' in GSC (Request Indexing has no API). Read the email only if it "
+     "reports an error or Google has not downloaded the sitemap recently."),
 ]
 
 

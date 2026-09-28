@@ -20,3 +20,7 @@ drafts/
 
 # --- macOS ---
 .DS_Store
+
+# runtime state (per environment, rebuilt on each host)
+data/gsc_monitor_state.json
+data/*.tmp

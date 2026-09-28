@@ -22,7 +22,9 @@ volume where you rank poorly.
    1. Go to https://console.cloud.google.com — create a project (e.g. "seo-agent").
    2. APIs & Services → Library → enable **Google Search Console API**.
    3. APIs & Services → OAuth consent screen → External → fill in app name +
-      your email. Add scope: `.../auth/webmasters.readonly`.
+      your email. Add scope: `.../auth/webmasters` (read + write: needed to
+      resubmit the sitemap; `webmasters.readonly` also works but then sitemap
+      submission is unavailable).
       Add yourself as a **test user** (important, or consent will fail).
    4. APIs & Services → Credentials → Create Credentials → **OAuth client ID**
       → Application type: **Desktop app** → Download JSON.
@@ -173,6 +175,39 @@ docker compose up -d          # (or re-run setup_vps.sh which starts it)
 The container's scheduler: `collect_gsc` daily, `fetch_market`/`analyze_market`/
 `generate_content`/`gsc_monitor` weekly. Every run is logged to `data/jobs.log`, and a
 failure emails you. Logs: `docker compose logs -f`.
+
+## Indexing automation — what runs for you, and what cannot be automated
+
+Google has **no API for "Request Indexing"**: the Search Console API can only
+*inspect* whether a URL is indexed, and the button in the UI is limited to about
+10 URLs/day. So 91 URLs cannot be requested programmatically — but requesting
+them individually is also the least valuable lever. What actually gets pages
+indexed is a fresh sitemap plus internal links; both are handled here.
+
+Automated on the weekly schedule:
+
+| Job | What it does | Your action |
+|---|---|---|
+| `submit_sitemap` (Mon 07:30) | Resubmits `sitemap.xml` and reports what Google last downloaded, plus any sitemap errors, and prunes page URLs wrongly registered as sitemaps | none |
+| `gsc_monitor` (Mon 07:15) | Inspects all 91 priority URLs, tracks **how long** each has been unindexed, and writes `reports/gsc-request-indexing.txt` | none |
+| `collect_gsc` (daily 06:05) | Search-analytics history, so ranking effects are measurable | none |
+
+The only manual step left is nudging URLs that stay unindexed for weeks. The
+monitor does that triage for you: anything unindexed **≥ 14 days** is listed
+first (oldest first, capped at the ~10/day quota) and it emails "No action
+needed" while everything is still fresh, so you are never asked to click for
+pages Google simply has not visited yet.
+
+```bash
+python src/submit_sitemap.py --config config.yaml          # submit + status (the weekly job)
+python src/submit_sitemap.py --config config.yaml --list    # status only
+python src/submit_sitemap.py --config config.yaml --prune   # drop non-sitemap entries
+python src/gsc_monitor.py --config config.yaml --repo /path/to/site --no-email   # baseline, no email
+```
+
+`submit_sitemap.py` exits non-zero (and so emails you) if the token lacks the
+write scope, printing the exact one-time fix: re-consent on a machine with a
+browser, then update `TOKEN_JSON` in the VPS `.env`.
 
 ## Merge new content (runbook)
 

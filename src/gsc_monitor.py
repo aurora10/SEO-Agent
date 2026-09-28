@@ -14,6 +14,8 @@ Usage:
     python src/gsc_monitor.py --config config.yaml --repo /path/to/constructief
 """
 import argparse
+import datetime as dt
+import json
 import os
 import re
 import smtplib
@@ -26,6 +28,56 @@ import yaml
 import gsc_client
 
 BASE = "https://constructief-bouw.be"
+
+# A URL unindexed for at least this long is worth a manual nudge; a freshly
+# discovered one is not.
+STUCK_DAYS = 14
+# Practical ceiling for GSC's "Request Indexing" button (no API exists for it).
+INDEX_REQUEST_QUOTA = 10
+
+
+def load_state(path: str) -> dict:
+    """Per-URL index history. Missing or corrupt -> empty (never crash)."""
+    try:
+        with open(path) as f:
+            data = json.load(f)
+        return data if isinstance(data, dict) else {}
+    except (OSError, ValueError):
+        return {}
+
+
+def save_state(path: str, state: dict) -> None:
+    directory = os.path.dirname(path)
+    if directory:
+        os.makedirs(directory, exist_ok=True)
+    tmp = f"{path}.tmp"
+    with open(tmp, "w") as f:
+        json.dump(state, f, indent=2, sort_keys=True)
+    os.replace(tmp, path)
+
+
+def update_state(state: dict, rows: list, today, indexed_fn) -> dict:
+    """Record status + when each URL was FIRST seen not indexed."""
+    for r in rows:
+        url = r["url"]
+        entry = state.setdefault(url, {})
+        entry["last_checked"] = today.isoformat()
+        if "error" in r:
+            entry["status"] = "error"
+            entry["error"] = str(r["error"])[:200]
+            continue
+        if indexed_fn(r):
+            entry["status"] = "indexed"
+            entry.setdefault("indexed_since", today.isoformat())
+            entry.pop("first_not_indexed", None)
+            entry.pop("error", None)
+        else:
+            entry["status"] = "not_indexed"
+            entry["coverage"] = r.get("coverage")
+            # setdefault: keep the ORIGINAL first sighting across runs
+            entry.setdefault("first_not_indexed", today.isoformat())
+            entry.pop("indexed_since", None)
+    return state
 DEFAULT_REPO = "/Users/albert/Desktop/CodeWork/Constructief/constructief"
 
 
@@ -119,6 +171,8 @@ def main() -> None:
     ap.add_argument("--repo", default=DEFAULT_REPO)
     ap.add_argument("--dry-run", action="store_true",
                     help="list the URLs only (no API calls)")
+    ap.add_argument("--no-email", action="store_true",
+                    help="run the check but skip the summary email")
     args = ap.parse_args()
 
     cfg = yaml.safe_load(open(args.config))
@@ -148,24 +202,75 @@ def main() -> None:
     not_idx = [r for r in rows if not is_indexed(r) and "error" not in r]
     err = [r for r in rows if "error" in r]
 
-    print(f"\nDone. indexed={len(indexed)}  not-indexed={len(not_idx)}  errors={len(err)}")
-    for r in not_idx:
-        print(f"  NOT INDEXED: {r['url']} -> {r.get('coverage')} (verdict={r.get('verdict')})")
-    for r in err:
-        print(f"  ERROR: {r['url']} -> {r.get('error')}")
+    # Age tracking: a URL that has been unindexed for weeks is worth a manual
+    # nudge; one discovered yesterday is not. We only know the age by remembering
+    # when we first saw it.
+    state_path = cfg.get("monitor_state", "data/gsc_monitor_state.json")
+    state = load_state(state_path)
+    today = dt.date.today()
+    update_state(state, rows, today, is_indexed)
+    save_state(state_path, state)
 
-    if (not_idx or err) and cfg.get("notify"):
+    def age_days(r):
+        first = (state.get(r["url"]) or {}).get("first_not_indexed")
+        try:
+            return (today - dt.date.fromisoformat(first)).days
+        except (TypeError, ValueError):
+            return 0
+
+    stuck = sorted([r for r in not_idx if age_days(r) >= STUCK_DAYS], key=age_days, reverse=True)
+    recent = [r for r in not_idx if age_days(r) < STUCK_DAYS]
+    requestable = [r["url"] for r in stuck][:INDEX_REQUEST_QUOTA]
+
+    print(f"\nDone. indexed={len(indexed)}  not-indexed={len(not_idx)}  errors={len(err)}")
+    print(f"  stuck >= {STUCK_DAYS} days: {len(stuck)} | newly not-indexed: {len(recent)}")
+    for r in stuck:
+        print(f"  STUCK {age_days(r):3d}d: {r['url']} -> {r.get('coverage')}")
+    for r in recent:
+        print(f"  new      : {r['url']} -> {r.get('coverage')}")
+    for r in err:
+        print(f"  ERROR    : {r['url']} -> {r.get('error')}")
+
+    # Copy-paste file for the GSC URL-inspection box.
+    os.makedirs("reports", exist_ok=True)
+    with open("reports/gsc-request-indexing.txt", "w") as f:
+        f.write(f"# URLs still not indexed, oldest first — {today.isoformat()}\n")
+        f.write("# Request indexing for at most ~10 per day in GSC (no API exists for this step).\n\n")
+        for r in sorted(stuck + recent, key=lambda x: -age_days(x)):
+            f.write(f"{r['url']}\t{age_days(r)}d\t{r.get('coverage') or ''}\n")
+
+    if (not_idx or err) and cfg.get("notify") and not args.no_email:
         lines = ["# GSC index monitor",
-                 f"Site: {site}", f"Checked: {len(rows)} URLs",
-                 f"indexed: {len(indexed)} | not-indexed: {len(not_idx)} | errors: {len(err)}", ""]
-        lines += [f"- {r['url']} → {r.get('coverage') or r.get('error')}" for r in (not_idx + err)]
+                 f"Site: {site}",
+                 f"Checked: {len(rows)} URLs | indexed: {len(indexed)} | "
+                 f"not-indexed: {len(not_idx)} | errors: {len(err)}",
+                 f"Stuck >= {STUCK_DAYS} days: {len(stuck)} | newly not-indexed: {len(recent)}",
+                 ""]
+        if requestable:
+            lines += [f"## The only manual step (quota ~{INDEX_REQUEST_QUOTA}/day)",
+                      "These have resisted a recrawl for weeks, so request indexing for "
+                      "them in GSC — copy-paste from reports/gsc-request-indexing.txt:", ""]
+            lines += [f"- {u}" for u in requestable]
+            if len(stuck) > len(requestable):
+                lines += ["", f"({len(stuck) - len(requestable)} more are stuck; take them "
+                              "over the following days.)", ""]
+        else:
+            lines += ["## No action needed",
+                      "Nothing has been unindexed long enough to be worth a manual "
+                      "request. The sitemap is resubmitted automatically; age tracking "
+                      "starts from the first observation.", ""]
+        lines += ["## Newly not-indexed (leave alone — Google needs time)", ""]
+        lines += [f"- {r['url']} → {r.get('coverage')}" for r in recent] or ["- (none)"]
+        if err:
+            lines += ["", "## Inspection errors", ""]
+            lines += [f"- {r['url']} → {r.get('error')}" for r in err]
         try:
             send_email(cfg, "[SEO] GSC index monitor: pages not indexed", "\n".join(lines))
             print("\nEmail sent (not-indexed pages).")
         except Exception as e:  # noqa: BLE001
             print("email failed:", type(e).__name__, e)
     else:
-        print("\nNo email sent (all priority pages indexed, or notify disabled).")
+        print("\nNo email sent (--no-email, all priority pages indexed, or notify disabled).")
 
 
 if __name__ == "__main__":

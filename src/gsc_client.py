@@ -1,7 +1,13 @@
 """Google Search Console API access (OAuth installed-app flow).
 
 First run opens a browser for consent and caches token.json;
-later runs refresh silently. Uses the searchanalytics.query endpoint.
+later runs refresh silently. Uses searchanalytics.query + urlInspection.index.
+
+Note on scopes: `webmasters` is the read-WRITE scope and a superset of
+`webmasters.readonly`. Read-only is enough for collecting data and inspecting
+index status, but `sitemaps.submit` needs the write scope — a token consented
+before that scope was added keeps working for reads and reports a clear
+"re-consent once" error on submit.
 """
 from datetime import date, timedelta
 
@@ -10,7 +16,18 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
-SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"]
+READONLY_SCOPE = "https://www.googleapis.com/auth/webmasters.readonly"
+WRITE_SCOPE = "https://www.googleapis.com/auth/webmasters"  # superset: read + write
+SCOPES = [WRITE_SCOPE]
+RECONSENT_HELP = (
+    "This token was consented with read-only access, so it cannot submit a "
+    "sitemap. Fix once: on a machine WITH a browser run "
+    "`python src/submit_sitemap.py --config config.yaml --auth` (or any script "
+    "here) to re-consent with write access, then update TOKEN_JSON in the VPS "
+    ".env with `base64 -i credentials/token.json | tr -d '\\n'` and restart the "
+    "container. Reads (collect_gsc, gsc_monitor) keep working meanwhile."
+)
+
 # GSC data typically lags ~2-3 days; never request later than this.
 DATA_LAG_DAYS = 3
 
@@ -18,7 +35,8 @@ DIMENSIONS = ["query", "page", "country", "device"]
 DIMENSION_SET = ",".join(DIMENSIONS)
 
 
-def get_service(client_secret_path: str, token_path: str):
+def load_credentials(client_secret_path: str, token_path: str):
+    """Valid Credentials, re-consenting via the browser flow when needed."""
     creds = None
     try:
         creds = Credentials.from_authorized_user_file(token_path, SCOPES)
@@ -49,7 +67,21 @@ def get_service(client_secret_path: str, token_path: str):
             ) from e
         with open(token_path, "w") as f:
             f.write(creds.to_json())
-    return build("searchconsole", "v1", credentials=creds)
+    return creds
+
+
+def granted_scopes(creds) -> list[str]:
+    return list(getattr(creds, "scopes", None) or [])
+
+
+def can_write(creds) -> bool:
+    """True when the token may call write endpoints (sitemaps.submit)."""
+    return WRITE_SCOPE in granted_scopes(creds)
+
+
+def get_service(client_secret_path: str, token_path: str):
+    return build("searchconsole", "v1",
+                 credentials=load_credentials(client_secret_path, token_path))
 
 
 def query_range(service, site_url: str, start: str, end: str,
