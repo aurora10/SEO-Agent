@@ -84,12 +84,14 @@ def main() -> int:
     ap.add_argument("--prune", action="store_true",
                     help="delete entries registered as sitemaps that are not sitemaps")
     ap.add_argument("--auth", action="store_true",
-                    help="re-consent (opens a browser) and exit")
+                    help="re-consent now (opens a browser) and exit — use after "
+                         "publishing the OAuth app to get a long-lived token")
     args = ap.parse_args()
 
     cfg = yaml.safe_load(open(args.config))
     site = cfg["gsc_property"]
-    creds = load_credentials(cfg["oauth_client_secret"], cfg["token_file"])
+    creds = load_credentials(cfg["oauth_client_secret"], cfg["token_file"],
+                             force=args.auth)
     scopes = granted_scopes(creds)
     print(f"Property: {site}")
     print(f"Token scopes: {', '.join(scopes) or '(none reported)'}")
@@ -98,9 +100,13 @@ def main() -> int:
         print("  -> read-only token: sitemap status can be read, submit cannot.")
 
     if args.auth:
-        print("Re-consented and stored a fresh token." if can_write_now
-              else "Token still lacks the write scope.")
-        return 0 if can_write_now else 1
+        if can_write_now:
+            print("\nFresh token written with write scope. Copy it to the VPS:\n"
+                  "  base64 -i credentials/token.json | tr -d '\\n'   # -> TOKEN_JSON in .env")
+            return 0
+        print("\nToken still lacks the write scope — check the consent screen's "
+              "configured scopes.")
+        return 1
 
     sitemap = args.sitemap or DEFAULT_SITEMAP
     service = get_service(cfg["oauth_client_secret"], cfg["token_file"])

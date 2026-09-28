@@ -35,13 +35,19 @@ DIMENSIONS = ["query", "page", "country", "device"]
 DIMENSION_SET = ",".join(DIMENSIONS)
 
 
-def load_credentials(client_secret_path: str, token_path: str):
-    """Valid Credentials, re-consenting via the browser flow when needed."""
+def load_credentials(client_secret_path: str, token_path: str, force: bool = False):
+    """Valid Credentials, re-consenting via the browser flow when needed.
+
+    `force=True` ignores the cached token and runs the consent flow again — use it
+    after publishing the OAuth app, because tokens issued while the app is in
+    'Testing' expire after 7 days and only a fresh consent gets a long-lived one.
+    """
     creds = None
-    try:
-        creds = Credentials.from_authorized_user_file(token_path, SCOPES)
-    except Exception:
-        creds = None
+    if not force:
+        try:
+            creds = Credentials.from_authorized_user_file(token_path, SCOPES)
+        except Exception:
+            creds = None
     if creds and creds.expired and creds.refresh_token:
         try:
             creds.refresh(Request())
