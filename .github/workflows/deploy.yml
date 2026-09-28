@@ -55,5 +55,11 @@ jobs:
           script: |
             set -e
             cd "${{ env.VPS_DIR }}"
+            # Keep the host checkout in sync as well: docker-compose.yml,
+            # entrypoint.sh and deploy/ live here and are NOT part of the image,
+            # so without this a change such as a new volume never reaches the
+            # VPS. Non-fatal on purpose — a dirty or diverged checkout must not
+            # block an otherwise good image deploy.
+            git -c safe.directory="$PWD" pull --ff-only || echo "[deploy] WARN: could not fast-forward the checkout (compose file may be stale)"
             docker compose pull
             docker compose up -d
