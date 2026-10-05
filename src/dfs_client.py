@@ -3,9 +3,9 @@
 Costs (as of 2025, verify on their pricing page):
   - SERP organic (live):      ~$0.0020 per keyword per location
   - Search volume (Keywords Data, live): ~$0.075 per 1000 keywords... but min $0.05/task.
-Strategy: volume for all keywords in ONE task (cheap), SERP live per keyword
-in 2 locations (BE, NL). ~59 keywords x 2 locations x $0.002 = ~$0.24/run.
-
+Strategy: volume for all keywords in ONE task per market (cheap), SERP live per
+keyword. Markets come from config `markets` (BE/nl, NL/nl, BE/ru): SERPs are only
+fetched for keywords that actually report volume, so the spend tracks demand.
 Results are cached in SQLite — re-runs cost nothing unless cache is expired.
 """
 import json
@@ -18,8 +18,11 @@ import requests
 API = "https://api.dataforseo.com/v3"
 
 # Location codes: https://docs.dataforseo.com/v3/keywords_data/google/locations/
-LOCATIONS = {"BE": 2056, "NL": 2528}
-LANG = {"nl": "nl", "fr": "fr"}
+# Every country in config `markets` MUST be here, and every language in
+# src/keywords.py MUST be in LANG — a missing entry is a hard KeyError on the
+# first keyword of that market, i.e. it breaks the whole monthly run.
+LOCATIONS = {"BE": 2056, "NL": 2528, "UA": 2804, "PL": 2616}
+LANG = {"nl": "nl", "fr": "fr", "ru": "ru"}
 
 
 class DFS:
