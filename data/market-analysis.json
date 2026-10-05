@@ -146,6 +146,12 @@
       "striking": 0
     }
   },
+  "markets": {
+    "BE": {
+      "volume": 100,
+      "keywords": 7
+    }
+  },
   "keywords": [
     {
       "keyword": "onderaannemer bouw",
@@ -178,7 +184,14 @@
           "rank": 5
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 40,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "onderaannemer bouw beschikbaar",
@@ -208,7 +221,14 @@
           "rank": 5
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "bouwploeg huren",
@@ -238,7 +258,14 @@
           "rank": 4
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "bouwploeg inhuren",
@@ -268,7 +295,14 @@
           "rank": 4
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "buitenlandse bouwvakkers inhuren",
@@ -298,7 +332,14 @@
           "rank": 4
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "poolse arbeiders bouw",
@@ -328,7 +369,14 @@
           "rank": 3
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 10,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "oost-europese vakmensen bouw",
@@ -358,7 +406,14 @@
           "rank": 4
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "detachering bouwpersoneel",
@@ -391,7 +446,14 @@
           "rank": 5
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 10,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "vakmensen bouw inhuren",
@@ -421,7 +483,14 @@
           "rank": 5
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "betrouwbare onderaannemer bouw",
@@ -451,7 +520,14 @@
           "rank": 5
         }
       ],
-      "status": "deep"
+      "status": "deep",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": 30
+        }
+      ]
     },
     {
       "keyword": "onderaannemer betonwerken",
@@ -481,7 +557,14 @@
           "rank": 3
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "betonarbeiders ploeg",
@@ -511,7 +594,14 @@
           "rank": 5
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "betonploeg",
@@ -541,7 +631,14 @@
           "rank": 4
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "onderaannemer gevelwerk",
@@ -571,7 +668,14 @@
           "rank": 3
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "gevelrenovatie onderaannemer",
@@ -601,7 +705,14 @@
           "rank": 4
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "gevelisolatie ploeg",
@@ -631,7 +742,14 @@
           "rank": 3
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "onderaannemer dakwerken",
@@ -661,7 +779,14 @@
           "rank": 5
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 10,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "dakwerkers ploeg",
@@ -691,7 +816,14 @@
           "rank": 5
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "dakdekker onderaannemer",
@@ -721,7 +853,14 @@
           "rank": 3
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "stukadoor ploeg",
@@ -751,7 +890,14 @@
           "rank": 5
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "stukadoors inhuren",
@@ -781,7 +927,14 @@
           "rank": 4
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "tegelzetter ploeg",
@@ -811,7 +964,14 @@
           "rank": 5
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "onderaannemer binnenafwerking",
@@ -841,7 +1001,14 @@
           "rank": 5
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "afwerkingsploeg bouw",
@@ -871,7 +1038,14 @@
           "rank": 4
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "onderaannemer ruwbouw",
@@ -901,7 +1075,14 @@
           "rank": 5
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 10,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "metselaars ploeg",
@@ -931,7 +1112,14 @@
           "rank": 5
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "metselaars inhuren",
@@ -961,7 +1149,14 @@
           "rank": 6
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "onderaannemer bouw antwerpen",
@@ -991,7 +1186,14 @@
           "rank": 4
         }
       ],
-      "status": "striking_distance"
+      "status": "striking_distance",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": 15
+        }
+      ]
     },
     {
       "keyword": "onderaannemer bouw brussel",
@@ -1021,7 +1223,14 @@
           "rank": 4
         }
       ],
-      "status": "deep"
+      "status": "deep",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": 27
+        }
+      ]
     },
     {
       "keyword": "onderaannemer bouw gent",
@@ -1051,7 +1260,14 @@
           "rank": 6
         }
       ],
-      "status": "striking_distance"
+      "status": "striking_distance",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": 11
+        }
+      ]
     },
     {
       "keyword": "onderaannemer bouw leuven",
@@ -1081,7 +1297,14 @@
           "rank": 6
         }
       ],
-      "status": "page1"
+      "status": "page1",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": 10
+        }
+      ]
     },
     {
       "keyword": "onderaannemer bouw luik",
@@ -1111,7 +1334,14 @@
           "rank": 5
         }
       ],
-      "status": "top3"
+      "status": "top3",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": 3
+        }
+      ]
     },
     {
       "keyword": "onderaannemer bouw amsterdam",
@@ -1141,7 +1371,14 @@
           "rank": 7
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "NL",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "bouwploeg huren amsterdam",
@@ -1171,7 +1408,14 @@
           "rank": 4
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "NL",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "onderaannemer bouw rotterdam",
@@ -1201,7 +1445,14 @@
           "rank": 7
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "NL",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "bouwploeg huren rotterdam",
@@ -1231,7 +1482,14 @@
           "rank": 3
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "NL",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "onderaannemer betonwerken antwerpen",
@@ -1261,7 +1519,14 @@
           "rank": 6
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "stukadoor ploeg antwerpen",
@@ -1291,7 +1556,14 @@
           "rank": 8
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "onderaannemer betonwerken brussel",
@@ -1321,7 +1593,14 @@
           "rank": 6
         }
       ],
-      "status": "deep"
+      "status": "deep",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": 34
+        }
+      ]
     },
     {
       "keyword": "stukadoor ploeg brussel",
@@ -1351,7 +1630,14 @@
           "rank": 6
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "onderaannemer betonwerken gent",
@@ -1381,7 +1667,14 @@
           "rank": 6
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "stukadoor ploeg gent",
@@ -1411,7 +1704,14 @@
           "rank": 4
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "onderaannemer betonwerken leuven",
@@ -1441,7 +1741,14 @@
           "rank": 6
         }
       ],
-      "status": "deep"
+      "status": "deep",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": 35
+        }
+      ]
     },
     {
       "keyword": "stukadoor ploeg leuven",
@@ -1471,7 +1778,14 @@
           "rank": 6
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "onderaannemer betonwerken luik",
@@ -1501,7 +1815,14 @@
           "rank": 5
         }
       ],
-      "status": "top3"
+      "status": "top3",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": 3
+        }
+      ]
     },
     {
       "keyword": "stukadoor ploeg luik",
@@ -1531,7 +1852,14 @@
           "rank": 4
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "onderaannemer renovatie",
@@ -1561,7 +1889,14 @@
           "rank": 6
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 10,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "renovatiebouwer",
@@ -1591,7 +1926,14 @@
           "rank": 8
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "renovatieploeg",
@@ -1621,7 +1963,14 @@
           "rank": 3
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "bekistingploeg",
@@ -1651,7 +2000,14 @@
           "rank": 5
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 0,
+          "your_rank": null
+        }
+      ]
     },
     {
       "keyword": "betonvlechters",
@@ -1681,7 +2037,14 @@
           "rank": 4
         }
       ],
-      "status": "not_ranking"
+      "status": "not_ranking",
+      "markets": [
+        {
+          "location": "BE",
+          "volume": 10,
+          "your_rank": null
+        }
+      ]
     }
   ]
 }

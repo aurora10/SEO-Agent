@@ -18,10 +18,17 @@ import requests
 API = "https://api.dataforseo.com/v3"
 
 # Location codes: https://docs.dataforseo.com/v3/keywords_data/google/locations/
+# (verified against GET /v3/serp/google/locations).
 # Every country in config `markets` MUST be here, and every language in
 # src/keywords.py MUST be in LANG — a missing entry is a hard KeyError on the
 # first keyword of that market, i.e. it breaks the whole monthly run.
-LOCATIONS = {"BE": 2056, "NL": 2528, "UA": 2804, "PL": 2616}
+# BE/NL = where the work is; UA/PL/RO/LT/LV/EE = where the crews are recruited
+# from, searched in Russian (see config `markets`).
+LOCATIONS = {
+    "BE": 2056, "NL": 2528,                      # destination markets
+    "UA": 2804, "PL": 2616, "RO": 2642,          # recruiting markets
+    "LT": 2440, "LV": 2428, "EE": 2233,          # recruiting markets (Baltics)
+}
 LANG = {"nl": "nl", "fr": "fr", "ru": "ru"}
 
 

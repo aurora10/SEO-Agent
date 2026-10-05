@@ -187,6 +187,37 @@ def main():
         item["status"] = classify({"your_rank": serp["your_rank"]})
         rows.append(item)
 
+    # One row per keyword, not one per market.
+    # Each keyword is measured in every configured market (BE/nl, NL/nl, and the
+    # ru recruiting markets UA/PL/RO/LT/LV/EE). Keeping a row per market would
+    # count the same keyword 9x in the cluster totals and hand Agent 3 the same
+    # keyword nine times, so collapse to the market with the most volume and keep
+    # the rest alongside it in `markets`.
+    grouped: dict = {}
+    for r in rows:
+        market = {"location": r["location"], "volume": r["volume"],
+                  "your_rank": r["your_rank"]}
+        cur = grouped.get(r["keyword"])
+        if cur is None:
+            r = dict(r)
+            r["markets"] = [market]
+            grouped[r["keyword"]] = r
+        else:
+            cur["markets"].append(market)
+            if (r["volume"] or 0) > (cur["volume"] or 0):
+                best = dict(r)
+                best["markets"] = cur["markets"]
+                grouped[r["keyword"]] = best
+    rows = list(grouped.values())
+
+    # Demand per market — the recruiting countries are the point of the ru lane.
+    market_stats = defaultdict(lambda: {"volume": 0, "keywords": 0})
+    for r in rows:
+        for m in r.get("markets", []):
+            if m["volume"]:
+                market_stats[m["location"]]["volume"] += m["volume"]
+                market_stats[m["location"]]["keywords"] += 1
+
     # Aggregate by cluster
     clusters = defaultdict(lambda: {"volume": 0, "keywords": 0,
                                     "not_ranking": 0, "striking": 0})
@@ -206,6 +237,7 @@ def main():
     out_json = {
         "generated": __import__("datetime").date.today().isoformat(),
         "clusters": dict(clusters),
+        "markets": dict(market_stats),
         "keywords": rows,
     }
     with open("data/market-analysis.json", "w") as f:
@@ -224,16 +256,27 @@ def main():
         L.append(f"| {name} | {c['keywords']} | {c['volume']} | "
                  f"{c['not_ranking']} | {c['striking']} |")
 
+    L.append("\n## Demand by market\n")
+    L.append("Recruiting markets (ru) are where the crews search from; BE is where "
+             "the work is.\n")
+    L.append("| market | keywords with volume | total volume |")
+    L.append("|---|---|---|")
+    for loc, s in sorted(market_stats.items(), key=lambda x: -x[1]["volume"]):
+        L.append(f"| {loc} | {s['keywords']} | {s['volume']} |")
+
     L.append("\n## Priority keywords (volume > 0, best first)\n")
-    L.append("| keyword | vol | your rank | GSC 28d | target page | top competitor |")
-    L.append("|---|---|---|---|---|---|")
+    L.append("| keyword | vol | markets | your rank | GSC 28d | target page | top competitor |")
+    L.append("|---|---|---|---|---|---|---|")
     prio = sorted([r for r in rows if r["volume"] > 0],
                   key=lambda r: (-r["volume"], r["your_rank"] or 99))
     for r in prio:
         top = r["top_competitors"][0]["domain"] if r["top_competitors"] else "-"
         gsc_s = (f"pos {r['gsc']['gsc_pos']}, {r['gsc']['gsc_imp']} imp"
                  if r["gsc"] else "-")
-        L.append(f"| {r['keyword']} | {r['volume']} | {r['your_rank'] or '-'} | "
+        mk = ", ".join(f"{m['location']} {m['volume']}"
+                       for m in sorted(r.get("markets", []), key=lambda m: -m["volume"])
+                       if m["volume"]) or "-"
+        L.append(f"| {r['keyword']} | {r['volume']} | {mk} | {r['your_rank'] or '-'} | "
                  f"{gsc_s} | {r['target_page']} | {top} |")
 
     L.append("\n## Competitor frequency (who dominates these SERPs)\n")

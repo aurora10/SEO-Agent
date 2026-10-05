@@ -24,13 +24,23 @@ def main() -> None:
         "db_path": _s("DB_PATH", default="data/seo.db"),
         # Markets drive which (country, language) DataForSEO queries run. Every
         # language used in src/keywords.py MUST appear here or its keywords are
-        # silently never fetched: nl for the B2B side, nl + ru for the vacancy
-        # side (the crews are recruited in Eastern Europe and search in Russian).
+        # silently never fetched, and every country MUST exist in
+        # src/dfs_client.py LOCATIONS (a missing one is a hard KeyError mid-run).
+        # BE/NL are the destination markets (nl, B2B + Dutch job seekers).
+        # The ru markets are the RECRUITING side: the crews are in Eastern Europe
+        # and search in Russian from their own country, so demand has to be
+        # measured where they are, not only in Belgium.
         # fr was dropped with the FR job keywords (job-board intent, not buyers).
         "markets": [
             {"language": "nl", "country": "BE"},
             {"language": "nl", "country": "NL"},
             {"language": "ru", "country": "BE"},
+            {"language": "ru", "country": "UA"},
+            {"language": "ru", "country": "PL"},
+            {"language": "ru", "country": "RO"},
+            {"language": "ru", "country": "LT"},
+            {"language": "ru", "country": "LV"},
+            {"language": "ru", "country": "EE"},
         ],
         "backfill_days": int(_s("BACKFILL_DAYS", default="90")),
         "your_domain": _s("YOUR_DOMAIN", default="constructief-bouw.be"),
