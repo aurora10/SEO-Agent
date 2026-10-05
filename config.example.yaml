@@ -15,12 +15,15 @@ db_path: "data/seo.db"
 
 # Markets: language + country combos to segment queries by later.
 # These also drive which (country, language) DataForSEO queries Agent 2 runs.
+# Every language used in src/keywords.py must appear here or its keywords are
+# silently never fetched: nl for the B2B side, nl + ru for the vacancy side.
+# fr was dropped together with the FR job keywords (job-board intent, not buyers).
 markets:
   - language: nl
     country: BE
   - language: nl
     country: NL
-  - language: fr
+  - language: ru
     country: BE
 
 # How many days of history to backfill on first run (GSC max ~16 months = 480)

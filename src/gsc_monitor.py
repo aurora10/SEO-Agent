@@ -97,17 +97,43 @@ def parse_flagships(repo: str):
     return trades, cities
 
 
+def parse_vacancies(repo: str) -> tuple[list[str], list[str]]:
+    """(trade slugs, job ids) read from the site's vacancy data.
+
+    Derived, never hardcoded: postings come and go and trades get added, so a
+    stale list here would monitor URLs that no longer exist (or miss new ones).
+    """
+    import re
+
+    slugs, ids = [], []
+    for rel, pattern, bucket in (
+        ("src/data/vacancyTrades.ts", r"^\s+slug:\s*'([^']+)'", slugs),
+        ("src/data/vacancies.ts", r"^\s+id:\s*(\d+),", ids),
+    ):
+        try:
+            found = re.findall(pattern, open(os.path.join(repo, rel)).read(), re.M)
+        except OSError:
+            continue
+        bucket.extend(found)
+    return slugs, ids
+
+
 def priority_urls(repo: str) -> list[str]:
     """The pages we care most about:
     - werkgevers (commercial flagship)
     - base trade pages: /diensten/onderaannemer-{trade}
     - city trade+city pages: /diensten/onderaannemer-{trade}-{city} — the pages
-      that actually rank for city+trade queries.
-    All three locales are checked. ru used to be noindexed and excluded from the
-    sitemap; it is now indexable for these trade pages (they carry unique
-    per-trade-per-city copy), so their indexation has to be tracked too.
+      that actually rank for city+trade queries
+    - the vacancy cluster: /vacatures (hub), /vacatures/{trade} landing pages and
+      every live posting, for nl and ru only.
+    Trade pages are checked in all three locales. ru used to be noindexed and
+    excluded from the sitemap; it is now indexable for these pages, so their
+    indexation has to be tracked too. The vacancy cluster is nl+ru by design
+    (fr vacancy pages fall back to Dutch and stay noindexed).
     """
     trades, cities = parse_flagships(repo)
+    job_slugs, job_ids = parse_vacancies(repo)
+
     urls = [f"{BASE}/nl/werkgevers"]
     for lang in ("nl", "fr", "ru"):
         for t in sorted(trades):
@@ -115,6 +141,13 @@ def priority_urls(repo: str) -> list[str]:
         for c in sorted(cities):
             for t in sorted(trades):
                 urls.append(f"{BASE}/{lang}/diensten/onderaannemer-{t}-{c}")
+
+    for lang in ("nl", "ru"):
+        urls.append(f"{BASE}/{lang}/vacatures")
+        for slug in sorted(job_slugs):
+            urls.append(f"{BASE}/{lang}/vacatures/{slug}")
+        for job_id in sorted(job_ids, key=int):
+            urls.append(f"{BASE}/{lang}/vacatures/{job_id}")
     return urls
 
 

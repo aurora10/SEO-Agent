@@ -22,11 +22,15 @@ def main() -> None:
         "oauth_client_secret": "credentials/client_secret.json",
         "token_file": "credentials/token.json",
         "db_path": _s("DB_PATH", default="data/seo.db"),
-        # Markets drive which (country, language) DataForSEO queries run.
+        # Markets drive which (country, language) DataForSEO queries run. Every
+        # language used in src/keywords.py MUST appear here or its keywords are
+        # silently never fetched: nl for the B2B side, nl + ru for the vacancy
+        # side (the crews are recruited in Eastern Europe and search in Russian).
+        # fr was dropped with the FR job keywords (job-board intent, not buyers).
         "markets": [
             {"language": "nl", "country": "BE"},
             {"language": "nl", "country": "NL"},
-            {"language": "fr", "country": "BE"},
+            {"language": "ru", "country": "BE"},
         ],
         "backfill_days": int(_s("BACKFILL_DAYS", default="90")),
         "your_domain": _s("YOUR_DOMAIN", default="constructief-bouw.be"),

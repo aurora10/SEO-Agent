@@ -33,8 +33,14 @@ PAGE_MAP = {
     "trade:dak": "diensten/onderaannemer-dak",
     "trade:ruwbouw": "diensten/onderaannemer-ruwbouw",
     "trade:interieur": "diensten/onderaannemer-interieur",
+    # Job-seeker cluster (nl + ru): the vacancy pages, never the B2B service
+    # pages — "vacature metselaar" is somebody looking for work, not a buyer.
+    "jobs": "vacatures",
 }
 CITY_PAGE = "diensten/onderaannemer-{city}"
+# jobs:<slug> -> job-seeker landing per trade (slug matches the site's
+# src/data/vacancyTrades.ts, e.g. metselaar, bekister, kraanmachinist).
+JOB_TRADE_PAGE = "vacatures/{slug}"
 
 # Fallbacks mirroring the site. --repo overrides both from the site checkout so
 # a target page is only recommended when the route really exists.
@@ -69,14 +75,19 @@ def parse_flagships(repo):
 
 
 def _locale_for(lang: str) -> str:
-    # 'nl' default; 'fr'/'en' keywords target their own locale.
-    return {"fr": "fr", "en": "en"}.get(lang, "nl")
+    # Each language targets its OWN locale: fr -> /fr, ru -> /ru, everything else
+    # /nl. (ru fell through to /nl before, so the Russian job keywords would have
+    # been pointed at Dutch pages.)
+    return {"fr": "fr", "ru": "ru", "en": "en"}.get(lang, "nl")
 
 
 def best_url_for(kw, flagships=None) -> str:
     trades, cities = flagships or (FLAGSHIP_TRADES, FLAGSHIP_CITIES)
     cluster = kw.cluster
     locale = _locale_for(kw.lang)
+    if cluster.startswith("jobs:"):
+        # job-seeker landing page per trade, in the keyword's own language
+        return f"{BASE}/{locale}/{JOB_TRADE_PAGE.format(slug=cluster.split(':', 1)[1])}"
     if cluster.startswith("city:"):
         parts = cluster.split(":")
         city = parts[1]

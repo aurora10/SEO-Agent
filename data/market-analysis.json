@@ -1,40 +1,40 @@
 {
-  "generated": "2026-09-28",
+  "generated": "2026-10-05",
   "clusters": {
     "core": {
-      "volume": 80,
-      "keywords": 15,
-      "not_ranking": 14,
+      "volume": 60,
+      "keywords": 10,
+      "not_ranking": 9,
       "striking": 0
     },
     "trade:beton": {
       "volume": 0,
-      "keywords": 5,
-      "not_ranking": 5,
+      "keywords": 3,
+      "not_ranking": 3,
       "striking": 0
     },
     "trade:gevel": {
       "volume": 0,
-      "keywords": 5,
-      "not_ranking": 5,
+      "keywords": 3,
+      "not_ranking": 3,
       "striking": 0
     },
     "trade:dak": {
-      "volume": 20,
-      "keywords": 5,
-      "not_ranking": 5,
+      "volume": 10,
+      "keywords": 3,
+      "not_ranking": 3,
       "striking": 0
     },
     "trade:interieur": {
       "volume": 0,
-      "keywords": 8,
-      "not_ranking": 8,
+      "keywords": 5,
+      "not_ranking": 5,
       "striking": 0
     },
     "trade:ruwbouw": {
       "volume": 20,
-      "keywords": 7,
-      "not_ranking": 7,
+      "keywords": 5,
+      "not_ranking": 5,
       "striking": 0
     },
     "city:antwerpen": {
@@ -140,9 +140,9 @@
       "striking": 0
     },
     "trade:renovatie": {
-      "volume": 400,
-      "keywords": 5,
-      "not_ranking": 5,
+      "volume": 10,
+      "keywords": 3,
+      "not_ranking": 3,
       "striking": 0
     }
   },
@@ -157,8 +157,8 @@
       "competition": "MEDIUM",
       "your_rank": null,
       "gsc": {
-        "gsc_pos": 23.8,
-        "gsc_imp": 4.0
+        "gsc_pos": 24.0,
+        "gsc_imp": 2.0
       },
       "target_page": "https://constructief-bouw.be/nl/werkgevers",
       "top_competitors": [
@@ -370,8 +370,8 @@
       "competition": null,
       "your_rank": null,
       "gsc": {
-        "gsc_pos": 25.6,
-        "gsc_imp": 19.0
+        "gsc_pos": 8.1,
+        "gsc_imp": 10.0
       },
       "target_page": "https://constructief-bouw.be/nl/werkgevers",
       "top_competitors": [
@@ -452,156 +452,6 @@
         }
       ],
       "status": "deep"
-    },
-    {
-      "keyword": "sous-traitant construction",
-      "cluster": "core",
-      "lang": "fr",
-      "city": null,
-      "location": "BE",
-      "volume": 10,
-      "competition": "MEDIUM",
-      "your_rank": null,
-      "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/werkgevers",
-      "top_competitors": [
-        {
-          "domain": "emplois.be.indeed.com",
-          "title": "emplois Sous traitant construction",
-          "rank": 2
-        },
-        {
-          "domain": "www.artibox-belgique.be",
-          "title": "Comment trouver des chantiers en sous-traitance en ...",
-          "rank": 3
-        },
-        {
-          "domain": "www.buildwise.be",
-          "title": "Des travaux en sous-traitance dans la construction ? Voici ...",
-          "rank": 4
-        }
-      ],
-      "status": "not_ranking"
-    },
-    {
-      "keyword": "sous-traitance bâtiment",
-      "cluster": "core",
-      "lang": "fr",
-      "city": null,
-      "location": "BE",
-      "volume": 10,
-      "competition": "HIGH",
-      "your_rank": null,
-      "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/werkgevers",
-      "top_competitors": [
-        {
-          "domain": "emplois.be.indeed.com",
-          "title": "emplois Sous traitant construction",
-          "rank": 2
-        },
-        {
-          "domain": "www.artibox-belgique.be",
-          "title": "Comment trouver des chantiers en sous-traitance en ...",
-          "rank": 3
-        },
-        {
-          "domain": "www.securex.be",
-          "title": "Sous-traitance dans le bâtiment : comment établir un contrat",
-          "rank": 4
-        }
-      ],
-      "status": "not_ranking"
-    },
-    {
-      "keyword": "équipe construction",
-      "cluster": "core",
-      "lang": "fr",
-      "city": null,
-      "location": "BE",
-      "volume": 0,
-      "competition": null,
-      "your_rank": null,
-      "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/werkgevers",
-      "top_competitors": [
-        {
-          "domain": "emplois.be.indeed.com",
-          "title": "emplois Chef d'équipe construction",
-          "rank": 2
-        },
-        {
-          "domain": "www.startpeople.be",
-          "title": "Offres d'emploi pour \"chef d equipe construction\" - Start People",
-          "rank": 5
-        },
-        {
-          "domain": "www.ccl.be",
-          "title": "Chef d'équipe - Embuild - Chambre de la Construction",
-          "rank": 6
-        }
-      ],
-      "status": "not_ranking"
-    },
-    {
-      "keyword": "main-d'œuvre construction",
-      "cluster": "core",
-      "lang": "fr",
-      "city": null,
-      "location": "BE",
-      "volume": 0,
-      "competition": null,
-      "your_rank": null,
-      "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/werkgevers",
-      "top_competitors": [
-        {
-          "domain": "www.vertuoza.com",
-          "title": "Quel est le coût de la main-d'œuvre dans le bâtiment ?",
-          "rank": 2
-        },
-        {
-          "domain": "traxxeo.com",
-          "title": "Comment calculer au mieux le coût de la main d'œuvre sur ...",
-          "rank": 4
-        },
-        {
-          "domain": "linfo-csc.be",
-          "title": "Pénurie de main-d'œuvre dans le secteur - L'Info CSC |",
-          "rank": 5
-        }
-      ],
-      "status": "not_ranking"
-    },
-    {
-      "keyword": "ouvriers construction étrangers",
-      "cluster": "core",
-      "lang": "fr",
-      "city": null,
-      "location": "BE",
-      "volume": 0,
-      "competition": null,
-      "your_rank": null,
-      "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/werkgevers",
-      "top_competitors": [
-        {
-          "domain": "constructiv.be",
-          "title": "FAQ-Travailleurs étranger",
-          "rank": 2
-        },
-        {
-          "domain": "www.siod.belgie.be",
-          "title": "Information pour les travailleurs étrangers de la construction ...",
-          "rank": 3
-        },
-        {
-          "domain": "www.sdworx.be",
-          "title": "Profils étrangers : pour une PME sur trois, la nationalité n'a ...",
-          "rank": 4
-        }
-      ],
-      "status": "not_ranking"
     },
     {
       "keyword": "onderaannemer betonwerken",
@@ -1114,246 +964,6 @@
       "status": "not_ranking"
     },
     {
-      "keyword": "sous-traitant béton",
-      "cluster": "trade:beton",
-      "lang": "fr",
-      "city": null,
-      "location": "BE",
-      "volume": 0,
-      "competition": null,
-      "your_rank": null,
-      "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-beton",
-      "top_competitors": [
-        {
-          "domain": "wannijn.be",
-          "title": "Infra",
-          "rank": 2
-        },
-        {
-          "domain": "www.artibox-belgique.be",
-          "title": "Comment trouver des chantiers en sous-traitance en ...",
-          "rank": 3
-        },
-        {
-          "domain": "www.ergon.be",
-          "title": "Une réputation en béton",
-          "rank": 4
-        }
-      ],
-      "status": "not_ranking"
-    },
-    {
-      "keyword": "équipe béton",
-      "cluster": "trade:beton",
-      "lang": "fr",
-      "city": null,
-      "location": "BE",
-      "volume": 0,
-      "competition": null,
-      "your_rank": null,
-      "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-beton",
-      "top_competitors": [
-        {
-          "domain": "www.sobemo.be",
-          "title": "Notre équipe d'experts du béton à votre service - Sobemo",
-          "rank": 2
-        },
-        {
-          "domain": "www.actiris.brussels",
-          "title": "chef d'equipe beton H/F/X - Ref. 5919810",
-          "rank": 3
-        },
-        {
-          "domain": "www.tempo-team.be",
-          "title": "Offre d'emploi chef d'équipe beton à Saint-Ghislain, Hainaut",
-          "rank": 4
-        }
-      ],
-      "status": "not_ranking"
-    },
-    {
-      "keyword": "sous-traitant façade",
-      "cluster": "trade:gevel",
-      "lang": "fr",
-      "city": null,
-      "location": "BE",
-      "volume": 0,
-      "competition": null,
-      "your_rank": null,
-      "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-gevel",
-      "top_competitors": [
-        {
-          "domain": "www.btpfusion.com",
-          "title": "Sous-traitant Façade - Façadier",
-          "rank": 2
-        },
-        {
-          "domain": "www.facebook.com",
-          "title": "Recherche sous traitant sur Bruxelles toiture et façade",
-          "rank": 4
-        },
-        {
-          "domain": "www.arti-box.fr",
-          "title": "Trouver des chantiers de façade",
-          "rank": 5
-        }
-      ],
-      "status": "not_ranking"
-    },
-    {
-      "keyword": "rénovation façade sous-traitant",
-      "cluster": "trade:gevel",
-      "lang": "fr",
-      "city": null,
-      "location": "BE",
-      "volume": 0,
-      "competition": null,
-      "your_rank": null,
-      "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-gevel",
-      "top_competitors": [
-        {
-          "domain": "www.euronet-vanbelle.be",
-          "title": "Rénovation de façade à Bruxelles - Euronet",
-          "rank": 2
-        },
-        {
-          "domain": "www.facebook.com",
-          "title": "Recherche sous traitant sur Bruxelles toiture et façade",
-          "rank": 3
-        },
-        {
-          "domain": "fr.indeed.com",
-          "title": "Sous Traitance Facade : plus de 100 emplois (13 août 2026)",
-          "rank": 4
-        }
-      ],
-      "status": "not_ranking"
-    },
-    {
-      "keyword": "sous-traitant toiture",
-      "cluster": "trade:dak",
-      "lang": "fr",
-      "city": null,
-      "location": "BE",
-      "volume": 10,
-      "competition": "HIGH",
-      "your_rank": null,
-      "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-dak",
-      "top_competitors": [
-        {
-          "domain": "www.facebook.com",
-          "title": "🔨 Collaboration sous-traitance – Toiture Entreprise de ...",
-          "rank": 1
-        },
-        {
-          "domain": "www.energyprotect.be",
-          "title": "Couvreur indépendant toiture Wallonie",
-          "rank": 3
-        },
-        {
-          "domain": "www.artibox-belgique.be",
-          "title": "Travaux de toiture | ArtiBox",
-          "rank": 7
-        }
-      ],
-      "status": "not_ranking"
-    },
-    {
-      "keyword": "couvreurs équipe",
-      "cluster": "trade:dak",
-      "lang": "fr",
-      "city": null,
-      "location": "BE",
-      "volume": 0,
-      "competition": null,
-      "your_rank": null,
-      "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-dak",
-      "top_competitors": [
-        {
-          "domain": "www.jobteaser.com",
-          "title": "Chef d'équipe de couvreurs",
-          "rank": 1
-        },
-        {
-          "domain": "www.facebook.com",
-          "title": "Couvreurs de Belgique",
-          "rank": 5
-        },
-        {
-          "domain": "www.trustup.be",
-          "title": "Top 10 des meilleurs couvreurs en Belgique",
-          "rank": 6
-        }
-      ],
-      "status": "not_ranking"
-    },
-    {
-      "keyword": "sous-traitant plâtrerie",
-      "cluster": "trade:interieur",
-      "lang": "fr",
-      "city": null,
-      "location": "BE",
-      "volume": 0,
-      "competition": null,
-      "your_rank": null,
-      "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-interieur",
-      "top_competitors": [
-        {
-          "domain": "fr.indeed.com",
-          "title": "emplois Sous traitant plaquiste",
-          "rank": 2
-        },
-        {
-          "domain": "www.artibox-belgique.be",
-          "title": "Comment trouver des chantiers en sous-traitance en ...",
-          "rank": 4
-        },
-        {
-          "domain": "cotraitance.com",
-          "title": "recherches des sous-traitants PLATRERIE + ISOLATION + ...",
-          "rank": 5
-        }
-      ],
-      "status": "not_ranking"
-    },
-    {
-      "keyword": "carreleurs équipe",
-      "cluster": "trade:interieur",
-      "lang": "fr",
-      "city": null,
-      "location": "BE",
-      "volume": 0,
-      "competition": null,
-      "your_rank": null,
-      "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-interieur",
-      "top_competitors": [
-        {
-          "domain": "expert-carreleur.be",
-          "title": "EXPERT CARRELEUR",
-          "rank": 1
-        },
-        {
-          "domain": "www.trustup.be",
-          "title": "Top 10 des meilleurs carreleurs à La Louvière",
-          "rank": 2
-        },
-        {
-          "domain": "be.jooble.org",
-          "title": "Emploi - Carreleur (D'urgence!)",
-          "rank": 3
-        }
-      ],
-      "status": "not_ranking"
-    },
-    {
       "keyword": "onderaannemer bouw antwerpen",
       "cluster": "city:antwerpen",
       "lang": "nl",
@@ -1386,14 +996,14 @@
     {
       "keyword": "onderaannemer bouw brussel",
       "cluster": "city:brussel",
-      "lang": "fr",
+      "lang": "nl",
       "city": "brussel",
       "location": "BE",
       "volume": 0,
       "competition": null,
       "your_rank": 27,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-brussel",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-brussel",
       "top_competitors": [
         {
           "domain": "be.indeed.com",
@@ -1476,14 +1086,14 @@
     {
       "keyword": "onderaannemer bouw luik",
       "cluster": "city:luik",
-      "lang": "fr",
+      "lang": "nl",
       "city": "luik",
       "location": "BE",
       "volume": 0,
       "competition": null,
       "your_rank": 3,
       "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-luik",
+      "target_page": "https://constructief-bouw.be/nl/diensten/onderaannemer-luik",
       "top_competitors": [
         {
           "domain": "aannemernodig.be",
@@ -2069,140 +1679,6 @@
           "domain": "www.mijnwoordenboek.nl",
           "title": "Cryptogram – Wedstrijd tussen betonvlechters – 1 resultaat",
           "rank": 4
-        }
-      ],
-      "status": "not_ranking"
-    },
-    {
-      "keyword": "sous-traitant rénovation",
-      "cluster": "trade:renovatie",
-      "lang": "fr",
-      "city": null,
-      "location": "BE",
-      "volume": 0,
-      "competition": null,
-      "your_rank": null,
-      "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-renovatie",
-      "top_competitors": [],
-      "status": "not_ranking"
-    },
-    {
-      "keyword": "entrepreneur rénovation",
-      "cluster": "trade:renovatie",
-      "lang": "fr",
-      "city": null,
-      "location": "BE",
-      "volume": 390,
-      "competition": "HIGH",
-      "your_rank": null,
-      "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-renovatie",
-      "top_competitors": [
-        {
-          "domain": "www.trustup.be",
-          "title": "Top 10 des meilleurs entrepreneurs en rénovation ...",
-          "rank": 4
-        },
-        {
-          "domain": "www.nova-concept.be",
-          "title": "Nova Concept: Entreprise générale de rénovation à Ath",
-          "rank": 5
-        },
-        {
-          "domain": "www.renovapro.be",
-          "title": "Entreprise de Rénovation - Rénovation de cuisine à Bruxelles",
-          "rank": 7
-        }
-      ],
-      "status": "not_ranking"
-    },
-    {
-      "keyword": "sous-traitance gros œuvre",
-      "cluster": "trade:ruwbouw",
-      "lang": "fr",
-      "city": null,
-      "location": "BE",
-      "volume": 0,
-      "competition": null,
-      "your_rank": null,
-      "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-ruwbouw",
-      "top_competitors": [
-        {
-          "domain": "www.vertuoza.com",
-          "title": "La sous-traitance dans le bâtiment : le guide ultime",
-          "rank": 2
-        },
-        {
-          "domain": "www.artibox-belgique.be",
-          "title": "Comment trouver des chantiers en sous-traitance en ...",
-          "rank": 4
-        },
-        {
-          "domain": "www.securex.be",
-          "title": "Sous-traitance dans le bâtiment : comment établir un contrat",
-          "rank": 5
-        }
-      ],
-      "status": "not_ranking"
-    },
-    {
-      "keyword": "maçons équipe",
-      "cluster": "trade:ruwbouw",
-      "lang": "fr",
-      "city": null,
-      "location": "BE",
-      "volume": 0,
-      "competition": null,
-      "your_rank": null,
-      "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-ruwbouw",
-      "top_competitors": [
-        {
-          "domain": "www.duchene-sa.be",
-          "title": "Maçon",
-          "rank": 1
-        },
-        {
-          "domain": "www.maisonscompere.be",
-          "title": "Chef d'équipe maçon (H/F)",
-          "rank": 3
-        },
-        {
-          "domain": "emplois.be.indeed.com",
-          "title": "Chef Équipe Maçon en CDI/CDD : 11 offres d'emploi",
-          "rank": 7
-        }
-      ],
-      "status": "not_ranking"
-    },
-    {
-      "keyword": "finition",
-      "cluster": "trade:interieur",
-      "lang": "fr",
-      "city": null,
-      "location": "BE",
-      "volume": 0,
-      "competition": null,
-      "your_rank": null,
-      "gsc": {},
-      "target_page": "https://constructief-bouw.be/fr/diensten/onderaannemer-interieur",
-      "top_competitors": [
-        {
-          "domain": "fr.wikipedia.org",
-          "title": "Finition (construction)",
-          "rank": 4
-        },
-        {
-          "domain": "www.larousse.fr",
-          "title": "Définitions : finition, finitions - Dictionnaire de français ...",
-          "rank": 5
-        },
-        {
-          "domain": "batico.be",
-          "title": "Types de finition",
-          "rank": 6
         }
       ],
       "status": "not_ranking"

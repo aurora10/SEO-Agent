@@ -79,6 +79,35 @@ The report shows keyword volumes, which clusters you rank for vs miss, the targe
 (existing or "MISSING — create"), and the top-3 competitors per keyword.
 It also writes `data/market-analysis.json` — the machine input for Agent 3.
 
+### The keyword universe (`src/keywords.py`)
+
+Two audiences, deliberately kept apart — they want opposite things from the same site:
+
+| Lane | Language | Intent | Targets |
+|---|---|---|---|
+| **nl-B2B** | nl | contractors buying subcontractor crews | `/werkgevers`, `/diensten/onderaannemer-*` |
+| **nl/ru-jobs** | nl + ru | people looking for work | `/vacatures`, `/vacatures/{trade}` |
+
+Clusters: `core`, `trade:<trade>`, `city:<city>`, `city:<city>:<trade>` (B2B) and
+`jobs`, `jobs:<slug>` (job seekers, slug = a `jobTradePages` slug on the site such
+as `metselaar`). `analyze_market.py` maps them to real routes; `jobs:*` never
+points at a B2B service page, because "vacature metselaar" is somebody looking
+for work, not a buyer.
+
+French was **removed** with the FR job keywords: those SERPs are dominated by job
+boards (indeed, constructiv.be), so they measured job-seeker intent rather than
+the buyer intent this site sells.
+
+Every language in the universe needs a matching entry in `markets` (config.yaml /
+`scripts/build_config.py`), or its keywords are silently never fetched:
+
+```yaml
+markets:
+  - {language: nl, country: BE}   # B2B + nl jobs
+  - {language: nl, country: NL}   # nl jobs, Netherlands
+  - {language: ru, country: BE}   # ru jobs (the recruiting side)
+```
+
 ## Agent 3: data-driven content writer
 
 Not random content: **each draft exists because a keyword in your market
@@ -126,7 +155,8 @@ Cost: ≈ €0.10/run with `gpt-4o-mini`.
 
 ### Bulk RU content (one-off / refresher)
 
-`generate_content.py` covers RU as part of the weekly cycle. For a bulk pass over
+`generate_content.py` is on demand (see the schedule), and covers RU itself when
+you run it. For a bulk pass over
 every trade x city pair there are two standalone helpers, useful when you add
 trades/cities and need the whole matrix filled at once:
 
@@ -172,24 +202,47 @@ docker compose up -d          # (or re-run setup_vps.sh which starts it)
 `DOCKERHUB_USERNAME`, `DOCKERHUB_TOKEN`, and optionally `VPS_HOST`,
 `VPS_USER`, `VPS_PORT`, `VPS_SSH_KEY`, `VPS_DIR` (for auto-redeploy).
 
-The container's scheduler: `collect_gsc` daily, `fetch_market`/`analyze_market`/
-`generate_content`/`gsc_monitor` weekly. Every run is logged to `data/jobs.log`, and a
+The container's scheduler (container-local time), deliberately cheap — the two
+jobs that spend money are off the weekly path:
+
+| Job | Cadence | Why |
+|---|---|---|
+| `collect_gsc` | daily 06:05 | free GSC API; also the daily auth canary |
+| `gsc_monitor` | weekly, Mon 06:30 | free GSC API; the week's indexation report |
+| `fetch_market` | monthly, 1st 06:45 | DataForSEO costs money per SERP |
+| `analyze_market` | monthly, 1st 07:00 | reads what `fetch_market` cached |
+| `submit_sitemap` | monthly, 1st 07:30 | recrawl signal; monthly is plenty |
+| `generate_content` | **on demand** | OpenAI costs money, and drafts only make sense when you are ready to review them |
+
+That is roughly one automated run per week instead of five. Run the on-demand
+jobs (or any job early) through the wrapper, so you get the same logging and the
+summary/failure email:
+
+```bash
+docker compose exec seo-agent python src/run_job.py generate_content \
+  python src/generate_content.py --config /app/config.yaml --repo /app/repo
+docker compose exec seo-agent python src/run_job.py publish_drafts \
+  python src/publish_drafts.py --config /app/config.yaml --repo /app/repo
+```
+
+`python src/scheduler.py --list` prints the schedule with the next run of each
+job (works off-container too). Every run is logged to `data/jobs.log`, and a
 failure emails you. Logs: `docker compose logs -f`.
 
 ## Indexing automation — what runs for you, and what cannot be automated
 
 Google has **no API for "Request Indexing"**: the Search Console API can only
 *inspect* whether a URL is indexed, and the button in the UI is limited to about
-10 URLs/day. So 91 URLs cannot be requested programmatically — but requesting
+10 URLs/day. So 115 URLs cannot be requested programmatically — but requesting
 them individually is also the least valuable lever. What actually gets pages
 indexed is a fresh sitemap plus internal links; both are handled here.
 
-Automated on the weekly schedule:
+Automated on the schedule:
 
 | Job | What it does | Your action |
 |---|---|---|
-| `submit_sitemap` (Mon 07:30) | Resubmits `sitemap.xml` and reports what Google last downloaded, plus any sitemap errors, and prunes page URLs wrongly registered as sitemaps | none |
-| `gsc_monitor` (Mon 07:15) | Inspects all 91 priority URLs, tracks **how long** each has been unindexed, and writes `reports/gsc-request-indexing.txt` | none |
+| `submit_sitemap` (monthly, 1st 07:30) | Resubmits `sitemap.xml` and reports what Google last downloaded, plus any sitemap errors, and prunes page URLs wrongly registered as sitemaps | none |
+| `gsc_monitor` (weekly, Mon 06:30) | Inspects all 115 priority URLs, tracks **how long** each has been unindexed, and writes `reports/gsc-request-indexing.txt` | none |
 | `collect_gsc` (daily 06:05) | Search-analytics history, so ranking effects are measurable | none |
 
 The only manual step left is nudging URLs that stay unindexed for weeks. The
@@ -251,8 +304,11 @@ python src/publish_drafts.py --config config.yaml --repo /path/to/constructief  
 - hreflang alternates are reciprocal on trade pages: `nl`, `fr`, `ru`,
   `x-default`. Non-indexed copies (thin city pages, ru city pages) declare only
   `x-default` -> the nl version.
-- The weekly `gsc_monitor` inspects **91 URLs** (nl/fr/ru x trade + trade x city
-  + `/nl/werkgevers`).
+- The weekly `gsc_monitor` inspects **115 URLs**: nl/fr/ru x trade and trade x city,
+  `/nl/werkgevers`, and the vacancy cluster (`/vacatures` hub, the five
+  `/vacatures/{trade}` landings and every live posting, nl + ru — fr vacancy pages
+  are noindexed by design). Trade slugs and job ids are read from the site data,
+  so the list maintains itself as postings come and go.
 
 ## Troubleshooting
 
