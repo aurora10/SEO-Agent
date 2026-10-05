@@ -39,15 +39,27 @@ class DFS:
     def _post(self, path: str, payload: list[dict]) -> dict:
         r = requests.post(f"{API}{path}", json=payload, auth=self.auth, timeout=120)
         if r.status_code != 200:
-            # DataForSEO still returns a JSON body with the real reason, e.g.
-            # 40104 "Please verify your account", 40203 insufficient funds, etc.
+            # The JSON body carries the real reason when there is one, but for
+            # HTTP 402 the body can be a plain envelope ("status_code 20000: Ok")
+            # which reads like success while the request was refused. Name the
+            # real cause: an exhausted DataForSEO balance.
+            body = {}
             try:
                 body = r.json()
-                raise RuntimeError(
-                    f"DataForSEO HTTP {r.status_code} "
-                    f"(status_code {body.get('status_code')}): {body.get('status_message')}")
             except ValueError:
-                r.raise_for_status()
+                pass
+            detail = (f"{body.get('status_code')}: {body.get('status_message')}"
+                      if body else r.text[:200])
+            if r.status_code == 402:
+                raise RuntimeError(
+                    "DataForSEO HTTP 402 — the account has no funds left, so this "
+                    "request was refused (the body may misleadingly say 'Ok'). "
+                    f"Top up at https://app.dataforseo.com/ then re-run. Detail: {detail}")
+            if r.status_code == 403:
+                raise RuntimeError(
+                    "DataForSEO HTTP 403 — usually the API IP whitelist or an "
+                    f"unverified account (40104). Detail: {detail}")
+            raise RuntimeError(f"DataForSEO HTTP {r.status_code} ({detail})")
         data = r.json()
         if data.get("status_code") not in (20000,):
             raise RuntimeError(f"DataForSEO error {data.get('status_code')}: "
