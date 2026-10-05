@@ -13,8 +13,17 @@ credentials/
 .env.local
 
 # --- Local data / generated artifacts ---
+# Everything the container WRITES into the mounted ./data must be ignored, not
+# just the databases: data/ is also the repo checkout on the VPS, so a generated
+# file that is tracked in git makes every `git pull` there abort with "local
+# changes would be overwritten" — which silently froze the VPS checkout for
+# weeks and stopped docker-compose.yml from ever updating.
 data/*.db
 data/*.log
+data/market-analysis.json
+data/agent3_applied.json
+data/gsc_monitor_state.json
+data/.last_*
 reports/
 drafts/
 
@@ -22,5 +31,4 @@ drafts/
 .DS_Store
 
 # runtime state (per environment, rebuilt on each host)
-data/gsc_monitor_state.json
 data/*.tmp
